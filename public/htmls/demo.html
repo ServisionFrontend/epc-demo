@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>打印</title>
+  <style>
+  	body {font:12px/1.8em 'Microsoft Yahei','Arial','Simhei','SimSun','sans-serif';}
+  	.legend-parts-wrap {width: 100%;}
+	.legend-container {position: absolute;top: 0;bottom: 0;left: 20px;width: 523px;border: 1px solid #e7e7e7;}
+	.legend-container .legend-head {height: 28px;line-height: 28px;background-color: #f1f0f0;border-bottom: 1px solid #e7e7e7;text-align: center;color: #555555;font-weight: bold;}
+	.legend-container .legend-body {position: absolute;top: 29px;bottom: 0;left: 0;right: 0;overflow-y: auto;overflow-x: hidden;}
+	.parts {position: absolute;left: 563px;right: 0;bottom: 0;top: 0;border: 1px solid #e7e7e7;}
+	.parts .parts-head {height: 28px;line-height: 28px;background-color: #f1f0f0;border-bottom: 1px solid #e7e7e7;text-align: center;color: #555555;font-weight: bold;}
+	.parts .parts-head ul {font-size: 0;*width: 100%;}
+	.parts .parts-head li {	display: inline-block;*display: inline;*zoom: 1;font-size: 12px;}
+	.parts .parts-head li span {display: inline-block;padding: 0 5px;}
+	.parts .parts-body {position: absolute;top: 29px;bottom: 0;left: 0;right: 0;overflow-y: auto;overflow-x: hidden;}
+	.parts .row-number {width: 10%;}
+	.parts .part-number {width: 19%;}
+	.parts .part-name {width: 28%;}
+	.parts .qty {width: 10%;}
+	.parts .remark {width: 15%;}
+	.parts .model {width: 8%;}
+	.parts .operation {width: 10%;*width: 7%;}
+	.parts .parts-body .list-item {font-size: 0;cursor: pointer;}
+	.parts .parts-body .list-item:hover {background-color: #e9f1ff;}
+	.parts .parts-body .list-item.checked {background-color: #e4ecfa;}
+	.parts .parts-body .item {vertical-align: top;display: inline-block;*display: inline;*zoom: 1;font-size: 12px;}
+	.parts .parts-body .item-cont-wrap {padding: 5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+	.parts .icon-wrap .icon {display: inline-block;width: 20px;height: 18px;background-image: url(images/parts_icon.png);background-repeat: no-repeat;}
+	.parts .icon.supersession {background-position: 0 0;}
+	.parts .icon.supersession.active {background-position: 0 -20px;}
+	.parts .icon.supersession.active:hover {background-position: 0 -40px;}
+	.parts .icon.copy {background-position: -20px 0;}
+	.parts .icon.copy.active {background-position: -20px -20px;}
+	.parts .icon.copy.active:hover {background-position: -20px -40px;}
+	.parts .icon.image {background-position: -40px 0;}
+	.parts .icon.image.active {background-position: -40px -20px;}
+	.parts .icon.image.active:hover {background-position: -40px -40px;}
+	.parts .icon.price {background-position: -60px 0;}
+	.parts .icon.price.active {background-position: -60px -20px;}
+	.parts .icon.price.active:hover {background-position: -60px -40px;}
+	.parts-body .part-number .number, .parts-body .part-name .name, .parts-body .part-name .date, .parts-body .remark .item-cont-wrap, .parts-body .model .model-first {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+	.parts .parts-body .operation {vertical-align: bottom;}
+  </style>
+</head>
+<body>
+
+	<div class="legend-parts-wrap">
+		<div class="legend-container">
+		  	<div class="legend-head">发动机总成</div>
+		  	<div class="legend-body"></div>
+		</div>		
+
+		<div class="parts">
+		  <div class="parts-head">
+		    <ul>
+		      <li class="row-number"><span>序号</span></li>
+		      <li class="part-number"><span>配件件号</span></li>
+		      <li class="part-name"><span>配件名称</span></li>
+		      <li class="qty"><span>用量</span></li>
+		      <li class="remark"><span>配件备注</span></li>
+		      <li class="model"><span>适用</span></li>
+		    </ul>
+		  </div>
+		  <div class="parts-body">
+		    
+
+		      <div class="list-item">
+		        <div class="item row-number">
+		          <div class="item-cont-wrap text-center"><span></span></div>
+		        </div>
+		        <div class="item part-number">
+		          <div class="item-cont-wrap">
+		            <div class="number"><a target="_blank" class="text-link"></a></div>
+		            <div class="icon-wrap">
+		              <a class="icon supersession active" href="javascript:;"></a>
+		              <a class="icon supersession"></a>              
+		              <a class="icon copy active"></a>
+		              <a class="icon image active" href="../../../detail?partNo="></a>
+		              <a class="icon image" href="javascript:;"></a>
+		              <a class="icon price active" data-price=""></a>
+		              <a class="icon price"></a>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="item part-name">
+		          <div class="item-cont-wrap">
+		            <div class="name"><span></span></div>
+		            <div class="date"><span></span></div>
+		          </div>
+		        </div>
+		        <div class="item qty">
+		          <div class="item-cont-wrap text-center"><span></span></div>
+		        </div>
+		        <div class="item remark">
+		          <div class="item-cont-wrap"><span></span></div>
+		        </div>
+		        <div class="item model text-center">
+		          <div class="item-cont-wrap">
+		            <a href="javascript:;" class="text-link">更多</a>
+		          </div>
+		        </div>
+		      </div>
+		      
+		    
+		  </div>      
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<%
+  viewBag.pageCode = 'myquestion';
+  viewBag.cssFiles = ['pac_common','online','calendar'];
+  viewBag.releaseCss = 'my_question.min';
+  viewBag.pageTitle = '我的问题_在线咨询_';
+%>
+<% include ../../common/head.ejs %>
+<% include ../../common/header.ejs %>
+
+<!--begin body-->
+
+<div class="page-cont main-cont">
+	<div class="header">
+		<span class="text">在线咨询</span>
+	</div>
+	<div class="content">
+		<div class="cont">
+			<div class="page-tab" id="tab">
+				<a href="javascript:;" data-field="0" class="item">我要提问</a>
+				<a href="javascript:;" data-field="1" class="item">问题查询</a>
+				<a href="javascript:;" data-field="2" class="item checked">我的问题</a>
+			</div>
+
+			<div id="tab-cont">
+				<form data-field="3" class="clearfix" id="question-form">
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">问题编码：</span>
+						</span>
+						<input class="input-box" type="text" name="numbering" data-name="numbering">
+					</div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">品牌：</span>
+						</span>
+						<span class="form-select" data-sign="brand" data-input="select">
+							<input type="hidden" class="form-select-input" autocomplete="off" value="" name="brandCode">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul id="brand-select-wrapper" class="form-select-option-list" style="display: none;">
+								<script type="text/template" id="brand-select-template" class="template">
+									{{#data}}
+										<li class="form-select-option" data-value={{code}} title="{{name}}">{{name}}</li>
+									{{/data}}
+								</script>
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">问题主题：</span>
+						</span>
+						<input class="input-box" type="text" name="subject" data-name="subject"></div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">问题分类：</span>
+						</span>
+						<span class="form-select" id="question-select">
+							<input type="hidden" class="form-select-input" autocomplete="off" value="" name="classificationCode" data-name="classificationCode">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul class="form-select-option-list" id="deep-group" style="display: none;">
+								<script type="text/template" id="deep-group-template">
+									{{#data}}
+										<li class="optgroup-list">
+											<span class="optgroup-list-title">{{name}}</span>
+											<ul class="optgroup-list-content">
+												{{#children}}
+													<li class="form-select-option" data-value="{{code}}" data-type="{{showStyle}}" title="{{name}}">{{name}}</li>
+												{{/children}}
+											</ul>
+										</li>
+									{{/data}}
+								</script>
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">关键词：</span>
+						</span>
+						<input class="input-box" type="text" name="key" data-name="key"></div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">提交时间：</span>
+						</span>
+						<input class="input-box data-input-box" id="search-date-start-input" type="text" name="dateAfter" data-name="dateAfter">
+						<span class="text-block date-input-splite">-</span>
+						<input class="input-box data-input-box" id="search-date-end-input" type="text" name="dateBefore" data-name="dateBefore">
+					</div>
+					<div class="data-item single">
+						<span class="label">
+							<span class="text">问题状态：</span>
+						</span>
+						<span class="form-select">
+							<input type="hidden" class="form-select-input" autocomplete="off" value="" name="status" data-name="status">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul id="question-status-wrapper" class="form-select-option-list" style="display: none;">
+								<script type="text/template" id="question-status-template">
+									{{#data}}
+										<li class="form-select-option" data-value="{{code}}" title="{{name}}">{{name}}</li>
+									{{/data}}
+								</script>
+							</ul>
+						</span>
+					</div>
+					<div class="btn-wrapper">
+						<a href="javascript:;" class="btn" data-id="search">查询</a>
+						<a href="javascript:;" class="btn secondary" data-id="reset">清空</a>
+					</div>
+				</form>
+				<div class="question-table-item question" data-field="question">
+					<div class="grid" id="question-table" data-urls='{"read": "/pac/online/getMyQuestion"}'>
+						<table>
+							<thead>
+								<tr>
+									<th>问题编码</th>
+									<th>问题主题</th>
+									<th>问题分类</th>
+									<th>问题状态</th>
+									<th>提问时间</th>
+									<th>最初回复人</th>
+									<th>最初回复时间</th>
+									<th>最后回复人</th>
+									<th>最后回复时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody data-id="grid-result">
+								<script type="text/template">
+									{{#list}}
+									<tr data-code="{{code}}" data-status="{{status}}">
+										<td><a href="javascript:;" data-action="goto-detail" data-number="{{numbering}}" class="text-link">{{numbering}}</a></td>
+										<td>{{subject}}</td>
+										<td>{{classificationName}}</td>
+										<td>{{statusName}}</td>
+										<td>{{createdOn}}</td>
+										<td>{{firstReplyPerson}}</td>
+										<td>{{firstReplyOn}}</td>
+										<td>{{lastReplyPerson}}</td>
+										<td>{{lastReplyOn}}</td>
+										<td>
+											<a href="javascript:;" data-action="close-question" class="text-link">关闭</a>
+										</td>
+									</tr>
+									{{/list}}
+								</script>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<% include ./paging.ejs %>
+		</div>
+		
+	</div>
+</div>
+<% include ./catalog.ejs %>
+<% include ./question_close_layer.ejs %>
+<!--end body-->
+<% include ../../common/footer.ejs %>

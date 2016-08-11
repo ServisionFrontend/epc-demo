@@ -1,0 +1,90 @@
+<%
+  viewBag.pageCode = 'detail';
+  viewBag.cssFiles = ['demo'];
+  viewBag.releaseCss = '';
+%>
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+	<div class="cont">
+		<div class="page-tab" id="tab">
+			<a href="javascript:;" data-field="0" class="item">按钮</a>
+			<a href="javascript:;" data-field="1" class="item">公共小样式</a>
+			<a href="javascript:;" data-field="2" class="item">小组件</a>
+			<a href="javascript:;" data-field="3" class="item">集成js的模块</a>
+			<a href="javascript:;" data-field="3" class="item">表格</a>
+		</div>
+
+		<div id="tab-cont">
+			<div data-field="0">
+				<a class="text-link" href="javascript:;">.text-link</a><br /><br />
+				<a class="text-link2" href="javascript:;">.text-link2</a><br /><br />
+				<a href="javascript:;" class="btn middle">确定</a><br /><br />
+				<a href="javascript:;" class="btn secondary">secondary</a><br /><br />
+				<a href="javascript:;" class="btn">浏览</a><br /><br />
+
+
+				<textarea id="content" rows="10" cols="60">这里是需要复制的内容</textarea>
+				<input id="copy" type="button" data-clipboard-target="content" value="复制">
+				
+			</div>
+			<div data-field="1">			
+				<div>
+					<div class="data-item">
+						<span class="label">
+							<span class="text" title="维修站编码">维修站编码：</span>
+						</span>
+						<input class="input-box" type="text">		
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span class="text" title="维修站编码">修站编禁用：</span>
+						</span>
+						<input class="input-box disabled" type="text" disabled="disabled">		
+					</div>
+					<div class="data-item required" id="address-select-wrap" data-area="verify">
+						<span class="label"><span class="text">所在地区：</span></span>
+						<span class="form-select">
+							<input type="hidden" name="provinceId" class="form-select-input" autocomplete="off" value="">
+						    <a class="form-select-switch-btn" href="javascript:;"><span class="form-select-text" title="">请选择</span></a>
+						    <ul class="form-select-option-list" style="display: none;">
+						    	<li class="form-select-option" data-value="2987" title="全境">全境</li>
+						    	<li class="form-select-option" data-value="2986" title="全境3">全境</li>
+						    </ul>
+						</span>                    
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">用户名：</span></span>
+						<span class="text-block">sunhaiyan</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">用户名：</span></span>
+						<textarea class="textarea-box"></textarea>
+					</div>
+				</div>
+				<div>
+					<span class="tip">
+						<span class="text">单个文件<4M,附件<5个</span>
+					</span>
+				</div>
+			</div>
+
+
+			<div data-field="2">
+				<div class="page-tab">
+					<a href="" data-field="" class="item">公共小样式</a>
+					<a href="" class="item">小组件</a>
+					<a href="" class="item">集成js的模块</a>
+				</div>
+			</div>
+
+			
+			<div data-field="3">
+
+			</div>		
+		</div>
+	</div>
+
+<script src="../../../scripts/app/demo/main.js"></script>
+<!--end body-->
+<% include ../common/footer.ejs %>

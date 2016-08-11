@@ -1,0 +1,10 @@
+<ul class="list">
+     <% crumbs.forEach(function(item){ %>
+        <li class="item">
+          <span class="label"><%= item.label %>：</span>
+          <a href="/epc/catalog?<%= item.params %>"  class="text-link2"><%= item.text %></a>
+        </li>
+     <% }) %>
+</ul>
+
+

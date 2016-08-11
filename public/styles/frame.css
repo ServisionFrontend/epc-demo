@@ -1,0 +1,23 @@
+html {
+	margin:0;
+	height:100%;
+}
+body {
+	margin:0;
+	height:100%;
+	font:12px/1.8em 'Microsoft Yahei','Arial','Simhei','SimSun','sans-serif';
+	color:#333333;
+	min-width: 1280px;
+}
+.clearfix:before,.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	zoom:1;
+}

@@ -1,0 +1,207 @@
+<%
+  viewBag.pageCode = 'online';
+  viewBag.cssFiles = ['pac_common','online'];
+  viewBag.releaseCss = 'online_question.min';
+  viewBag.pageTitle = '我要提问_在线咨询_';
+%>
+<% include ../../common/head.ejs %>
+<% include ../../common/header.ejs %>
+
+<!--begin body-->
+
+<div class="page-cont main-cont">
+	<div class="header">
+		<span class="text">在线咨询</span>
+	</div>
+	<div class="content">
+		<div class="cont">
+			<div class="page-tab" id="tab">
+				<a href="javascript:;" data-field="0" class="item checked">我要提问</a>
+				<a href="javascript:;" data-field="1" class="item">问题查询</a>
+				<a href="javascript:;" data-field="2" class="item">我的问题</a>
+			</div>
+
+			<div id="tab-cont">
+				<form data-field="0" class="clearfix" id="question-form" enctype="multipart/form-data">
+					<div class="data-item required single">
+						<span class="label">
+							<span class="text">问题主题：</span>
+						</span>
+						<input class="input-box" type="text" data-null="false" name="subject"></div>
+					<div class="data-item single required link-text">
+						<span class="label">
+							<span class="text">问题分类：</span>
+						</span>
+						<span class="form-select" id="question-select" data-input="select">
+							<input type="hidden" class="form-select-input" autocomplete="off" data-null="false" value="" name="classificationCode">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="" name=classificationCode></span>
+							</a>
+							<ul class="form-select-option-list" id="deep-group" style="display: none;">
+								<script type="text/template" id="deep-group-template">
+									{{#data}}
+										<li class="optgroup-list">
+											<span class="optgroup-list-title">{{name}}</span>
+											<ul class="optgroup-list-content">
+												{{#children}}
+													<li class="form-select-option" data-value="{{code}}" data-type="{{showStyle}}" title="{{name}}">{{name}}</li>
+												{{/children}}
+											</ul>
+										</li>
+									{{/data}}
+								</script>
+							</ul>
+						</span>
+						<a href="javascript:;" class="text-block text-link hide">查看分类说明</a>
+					</div>
+					<div class="data-item single required">
+						<span class="label">
+							<span class="text">品牌：</span>
+						</span>
+						<span class="form-select disabled" data-sign="brand" data-input="select">
+							<input type="hidden" class="form-select-input" autocomplete="off" data-null="false" value="" name="brandCode">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul class="form-select-option-list" style="display: none;">
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single required change-item">
+						<span class="label">
+							<span class="text">车系：</span>
+						</span>
+						<span class="form-select disabled" data-sign="series" data-input="select">
+							<input type="hidden" class="form-select-input" autocomplete="off" data-null="false" value="" name="seriesCode">
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul class="form-select-option-list" style="display: none;">
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single change-item">
+						<span class="label">
+							<span class="text">主组：</span>
+						</span>
+						<span class="form-select disabled" data-sign="main-group" data-input="select">
+							<input type="hidden" name="groupCode" class="form-select-input" autocomplete="off" value="" >
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul class="form-select-option-list" style="display: none;">
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single change-item">
+						<span class="label">
+							<span class="text">分组：</span>
+						</span>
+						<span class="form-select disabled" data-sign="child-group" data-input="select">
+							<input type="hidden" name="subgroupCode" class="form-select-input" autocomplete="off" value="" >
+							<a class="form-select-switch-btn" href="javascript:;">
+								<span class="form-select-text" title="">请选择</span>
+							</a>
+							<ul class="form-select-option-list" style="display: none;">
+							</ul>
+						</span>
+					</div>
+					<div class="data-item single change-item">
+						<span class="label">
+							<span class="text">VIN码：</span>
+						</span>
+						<input class="input-box" type="text" name="vin">
+					</div>
+					<div class="data-item single change-item">
+						<span class="label">
+							<span class="text">配件编码：</span>
+						</span>
+						<input class="input-box" type="text" name="partCode"></div>
+					<div class="data-item single change-item">
+						<span class="label">
+							<span class="text">配件名称：</span>
+						</span>
+						<input class="input-box" type="text" name="partName"></div>
+					<div class="data-item required fix">
+						<span class="label">
+							<span class="text">问题描述：</span>
+						</span>
+						<textarea class="textarea-box num-limit" data-null="false" name="description" data-encode="true" maxlength="500"></textarea>
+						<span class="text-num-tip">已输入 <span class="text-exist">0</span> 字，还能输入 <span class="text-remain">500</span> 字</span>
+					</div>
+					<div id="upload-form">
+						<div class="data-item fix middle-text">
+							<span class="label">
+								<span class="text" title="附件">附件：</span>
+							</span>
+							<span class="file-name"></span>
+							<a href="javascript:;" class="btn upload-btn">
+								<span>浏览</span>
+								<input class="input-box file-input" name="file1" type="file">
+							</a>
+							<a href="javascript:;" class="text-block text-link add-column">继续添加附件</a>
+							<span class="tip">
+								<span class="text">单个文件&le; 4M,附件&le; 5个</span>
+							</span>
+						</div>
+					</div>
+					<div class="data-item single required">
+						<span class="label">
+							<span class="text">提问人：</span>
+						</span>
+						<input class="input-box" type="text" data-null="false" name="questioner"></div>
+					<div class="data-item single required fixed-width">
+						<span class="label">
+							<span class="text">联系电话：</span>
+						</span>
+						<input class="input-box" type="text" data-null="false" name="contactPhone">
+						<div class="icon-container">
+						    <span class="layer-header">
+				            	<span class="icon"></span>
+				            	<span class="text"></span>
+				        	</span>
+				        	<div class="detail">
+					          	<div class="triangle-wrapper">
+  						        	<div class="triangle"></div>
+  						    	</div>
+				              	<div class="order-list-layer">
+					              	<div class="title">
+					              		<span class="title-text">正确格式</span>
+					              	</div>
+					                  	<div class="list-item">
+					                      	<span class="td-cont">1.输入数字要求为半角数字</span>
+					                  	</div>
+					                  	<div class="list-item">
+					                    	<span class="td-cont">2.手机号码（1 + 10位数字），示例：18912345678</span>
+					          			</div>
+					                  	<div class="list-item">
+					                    	<span class="td-cont">3.座机号码（区号-7/8位电话号码-1/4分机号），示例： </span>
+					                    	<div class="td-indent-cont">"021-12345678"、"0571-12345678-241"</div>
+					                </div>
+				              	</div>
+    				        </div>                 
+						</div>              
+					</div>
+
+					<div class="data-item single required disabled">
+						<span class="label">
+							<span class="text">服务店编码：</span>
+						</span>
+						<input class="input-box" type="text" disabled="disabled" data-null="false" data-name="service-code"></div>
+					<div class="data-item single required disabled">
+						<span class="label">
+							<span class="text">服务店名称：</span>
+						</span>
+						<input class="input-box" type="text" disabled="disabled" data-null="false" data-name="service-name"></div>
+					<div class="btn-wrapper">
+						<a href="javascript:;" class="btn middle" data-action="submit">提交</a>
+						<a href="javascript:;" class="btn middle secondary" data-action="reset">重置</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<% include ./catalog.ejs %>
+<!--end body-->
+<% include ../../common/footer.ejs %>

@@ -1,0 +1,67 @@
+	<div class="layer supersession-search-layer" id="supersession-search-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">替换查询</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div>
+				<div class="grid-search clearfix" id="supersession-search-query">
+					<div class="data-item">
+						<span class="label">
+							<span title="配件编码" class="text">配件编码：</span>
+						</span>
+						<input data-name="partNo" type="text" class="input-box">		
+					</div>	
+					<div class="data-item">
+						<div class="layer-operation">
+							<a class="btn" href="javascript:;" data-id="search">查询</a>
+							<a class="btn" href="javascript:;" data-id="reset">重置</a>
+						</div>
+					</div>
+					<div class="tip-wrap">
+						<span class="tips error hide"><span class="icon"></span><span class="text">请输入配件编码</span></span>
+					</div>
+				</div>
+			</div>
+			<div class="grid" id="supersession-search-grid" data-urls='{"read":"/epc/supersession"}'>
+				<table id="supersession-search-grid-table">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th title="旧件编码/旧替换组编码">旧件编码/旧替换组编码</th>
+							<th title="旧件名称/旧替换组描述">旧件名称/旧替换组描述</th>
+							<th title="新件编码/新替换组编码">新件编码/新替换组编码</th>
+							<th title="新件名称/新替换组描述">新件名称/新替换组描述</th>
+							<th>是否替换组</th>
+							<th>替换类型</th>
+							<th>断点时间</th>
+							<th>断点信息</th>
+							<th>备注</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody data-id="grid-result">
+						<script type="text/template">
+						{{#list}}
+							<tr>
+								<td title="{{rowNumber}}">{{rowNumber}}</td>
+								<td title="{{oldCode}}" {{#highlightOldCode}}class="highlight"{{/highlightOldCode}}>{{oldCode}}</td>
+								<td title="{{oldDesc}}">{{oldDesc}}</td>
+								<td title="{{newCode}}" {{#highlightNewCode}}class="highlight"{{/highlightNewCode}}>{{newCode}}</td>
+								<td title="{{newDesc}}">{{newDesc}}</td>
+								<td title="{{#group}}是{{/group}}{{^group}}否{{/group}}">{{#group}}是{{/group}}{{^group}}否{{/group}}</td>
+								<td title="{{substituteType}}">{{substituteType}}</td>
+								<td title="{{replaceTime}}">{{replaceTime}}</td>
+								<td title="{{breakPointNote}}">{{breakPointNote}}</td>
+								<td title="{{note}}">{{note}}</td>
+								<td>
+									{{#group}}<a class="text-link" data-action="supersession-detail" data-code="{{code}}" href="javascript:;">详情</a>{{/group}}
+								</td>
+							</tr>
+						{{/list}}
+						</script>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>

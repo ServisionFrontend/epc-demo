@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>打印_北汽电子配件目录信息管理系统</title>
+  <style>
+  	body {font:12px/1.8em 'Microsoft Yahei','Arial','Simhei','SimSun','sans-serif';}
+  	ul {padding: 0;margin: 0;list-style: none;}
+  	.clearfix:before,.clearfix:after {content: ".";display: block;height: 0;overflow: hidden;}
+	.clearfix:after {clear: both;}
+	.clearfix {zoom:1;}
+	.legend-container {float:left; width: 40%;border: 1px solid #e7e7e7;}
+	.legend-container .legend-head {height: 28px;line-height: 28px;background-color: #f1f0f0;border-bottom: 1px solid #e7e7e7;text-align: center;color: #555555;font-weight: bold;}
+	.legend-container .legend-body img {width: 100%;}
+	.parts {float: right;width: 58%;margin-bottom: 10px;}
+	.parts table {width: 100%;table-layout: fixed;border-collapse: collapse;border: 1px solid #e7e7e7;margin-bottom: 10px;}
+	.parts table thead {background-color: #f1f0f0;height: 28px;}
+	.parts table thead tr td {border-bottom: 1px solid #e7e7e7;}
+	.parts table tr {line-height: 24px;}
+	.parts table td {text-align: center;}
+
+  </style>
+</head>
+<body>
+	<div class="legend-part-wrap clearfix">
+		<div class="legend-container">
+		  	<div class="legend-head">发动机总成</div>
+		  	<div class="legend-body">
+		  		<img src="<%= gifUrl %>">
+		  	</div>
+		</div>		
+		<div class="parts">
+			<table>
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>配件编码</th>
+						<th>配件名称</th>
+						<th>用量</th>
+						<th>配件备注</th>
+						<th>使用</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% parts.forEach(function (item){ %>
+					<tr>
+						<td><%= item.callout %></td>
+						<td><%= item.partNo %></td>
+						<td><%= item.partName %></td>
+						<td><%= item.qty %></td>
+						<td><%= item.remark %></td>
+						<td>适用</td>
+					</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

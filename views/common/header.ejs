@@ -1,0 +1,142 @@
+  <!-- navigation -->
+  <div class="page-navigation clearfix" id="page-navigation">
+      <div class="nav-info">
+          <span class="text"><%= viewBag.realname %> 
+            您好！欢迎登录北汽电子配件目录信息管理系统！
+            <% if(viewBag.logDbName) { %>
+              (<%= viewBag.logDbName %>)
+            <% } %>
+            </span>
+      </div>
+    <div class="nav-list-wrap">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a href="/epc/catalog" class="text-link2">首页</a></li>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:shop:*','epc:shop:my')) { %>
+            <li class="nav-list-item">
+              <a id="nav-shopping-cart-link" data-action="shopping-cart" href="/epc/cart" target="_blank" class="text-link2">购物车<span class="num-wrap">(<span class="num">0</span>)</span></a>
+              <% include mini_cart.ejs %>
+            </li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:inf:*','epc:inf:view')) { %>  
+            <li class="nav-list-item"><a id="nav-notice-link" data-action="notice" href="javascript:;" class="text-link2">通知<span class="num-wrap">(<span class="num">0</span>)</span></a></li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:support')) { %>  
+            <li class="nav-list-item"><a id="nav-online-link" href="/pac/online" target="_blank" class="text-link2">在线咨询</a></li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:question')) { %>  
+            <li class="nav-list-item hide" data-action="questionnaire"><a id="nav-questionnaire-link" class="text-link2" href="javascript:;" data-action="open-questionnaire">问卷调查<span class="num-wrap">(<span class="num">0</span>)</span></a></li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:language')) { %>  
+            <li class="nav-list-item nav-lang">
+                <a href="javascript:;" class="text-link2">语言<span class="arrow"></span></a>
+                <div class="nav-item-layer">
+                    <ul class="nav-layer-list" id="nav-lang-list">
+                        <li data-action="zh"><a href="javascript:;">中文</a></li>
+                        <li data-action="en"><a href="javascript:;">英文</a></li>
+                    </ul>
+                </div>
+            </li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:settings')) { %>
+            <li class="nav-list-item"><a id="nav-manage-link" href="<%= viewBag.toEpcmUrl %>"  target="_blank" class="text-link2" >管理中心</a></li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:user:*','epc:user:view','epc:user:password')) { %>
+            <li class="nav-list-item nav-user-info">
+                <a data-action="userinfo" href="javascript:;" class="text-link2">用户中心<span class="arrow"></span></a>
+                <div class="nav-item-layer">
+                    <ul class="nav-layer-list">
+
+                      <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:user:view')) { %>
+                          <li data-action="user-info"><a id="nav-user-info-link" href="javascript:;">用户信息</a></li>
+                      <% } %>
+
+                      <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:user:password')) { %>
+                          <li data-action="modify-password"><a id="nav-user-password-link" href="javascript:;">修改密码</a></li>
+                      <% } %>
+                      <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:user:mail')) { %>
+                        <li data-action="modify-email"><a id="nav-user-email-link" href="javascript:;">修改邮箱</a></li>
+                      <% } %>
+                    </ul>
+                </div>
+            </li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:help')) { %>
+            <li class="nav-list-item">
+                <a data-action="help" href="javascript:;" class="text-link2">帮助中心<span class="arrow"></span></a>
+                <div class="nav-item-layer">
+                  <ul class="nav-layer-list">
+                    <li><a href="<%= viewBag.helpDocUrl %>" target="_blank">帮助手册</a></li>
+                    <li><a href="/epc/knowledge/index">知识库</a></li>
+                  </ul>
+                </div>
+            </li>
+        <% } %>
+
+        <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:dms')) { %>
+            <li class="nav-list-item"><a id="nav-dms-link" href="javascript:;" class="text-link2">进入DMS系统</a></li>
+        <% } %>
+        
+        <li class="nav-list-item"><a href="/logout" class="text-link2">退出</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- navigation end -->
+
+  <!-- header -->
+  <div class="page-header clearfix" id="page-header">
+    <a href="/epc/catalog" class="logo" id="logo" data-code="<%= viewBag.logoBrandCode %>"><img src="<%= viewBag.logoImgUrl %>"></a>
+    <div class="search-box">
+        <span class="form-select" id="header-search-select">
+          <input class="form-select-input" type="hidden" value="vin" data-field="value" autocomplete="off">
+          <a class="form-select-switch-btn" href="javascript:;"><span class="form-select-text" title="">VIN码</span></a>
+          <ul class="form-select-option-list" style="display: none;">
+            <li class="form-select-option" title="VIN码" data-value="vin">VIN码</li>
+            <li class="form-select-option" title="配件编码" data-value="part-no">配件编码</li>
+            <li class="form-select-option" title="零件名称" data-value="part-name">配件名称</li>
+            <li class="form-select-option" title="整车编码" data-value="vehicle-code">整车编码</li>
+          </ul>
+        </span>
+        <input type="text" id="header-search-box" class="search-input" />
+        <a href="javascript:;" id="header-search-close" class="search-close"></a>
+        <a href="javascript:;" id="header-search-btn" class="search-btn">查询</a>
+        <div id="header-autocomplete" class="header-autocomplete">
+            <ul class="list" id="header-autocomplete-list">
+              <script type="text/template">
+              {{#list}}
+                <li data-value="{{vinNo}}" title="{{vinNo}}">{{vinNo}}</li>
+              {{/list}}
+              </script>
+            </ul>
+        </div>
+    </div>
+    <div class="other-search">
+      <ul class="other-search-list">
+        <li class="item"><a href="javascript:;" data-action="advanced-search" class="text-link2">高级查询</a></li>
+        <li class="item"><a href="javascript:;" data-action="supersession-search" class="text-link2">替换查询</a></li>
+      </ul>
+    </div>
+    <span class="tips hide page-tips" id="page-tips">
+        <span class="icon"></span>
+        <span class="text"></span>
+    </span>
+  </div>
+  <!-- header end -->
+  
+  <% include ../dialog/advanced_search.ejs %>
+  <% include ../dialog/modify_password.ejs %>
+  <% include ../dialog/modify_email.ejs %>
+  <% include ../dialog/notice.ejs %>
+  <% include ../dialog/supersession_search.ejs %>
+  <% include ../dialog/userinfo.ejs %>
+  <% include ../dialog/vin_analysis.ejs %>
+  <% include ../dialog/vehicle_code.ejs %>
+  <% include ../dialog/supersession_detail.ejs %>
+  <% include ../dialog/questionnaire_list.ejs %>

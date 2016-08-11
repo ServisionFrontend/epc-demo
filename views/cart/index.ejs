@@ -1,0 +1,115 @@
+<%
+  viewBag.pageCode = 'cart';
+  viewBag.cssFiles = ["shopping_cart"];
+  viewBag.releaseCss = 'shopping_cart.min';
+  viewBag.pageTitle = '我的购物车_';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+	<div class="page-banner shopping-cart-banner" id="page-banner">
+		<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*' , 'epc:shop:*', 'epc:shop:history')) { %>
+			<a class="text-link" href="/epc/order" target="_blank">查看历史购物清单</a>
+		<% } %>
+		<span class="text">我的购物车</span>
+	</div>
+
+	<div class="page-cont shopping-cart">
+		<div class="grid-search clearfix" id="cart-grid-query">
+			<div class="data-item">
+				<span class="label">
+					<span title="配件编码" class="text">配件编码：</span>
+				</span>
+				<input data-name="partNo" type="text" class="input-box">		
+			</div>	
+			<div class="data-item search-operation">
+				<div class="operation">
+					<a class="btn" href="javascript:;" data-id="search">查询</a>
+					<a class="btn" href="javascript:;" data-id="reset">重置</a>
+				</div>
+			</div>
+		</div>
+		<div class="grid-operation1 text-right">
+			<% if(viewBag.hasOperation(viewBag.authCodes, 'epc:*', 'epc:shop:*', 'epc:shop:exp')) { %>
+				<a class="btn" href="/epc/cart/exportsFile">导出所有配件</a>
+			<% } %>
+			<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:shop:*','epc:shop:buy')) { %>
+			<a class="btn" href='javascript:;'>DMS订购</a>
+			<% } %>
+		</div>
+		<div class="grid" id="cart-grid" data-urls='{"read": "/epc/cart/query"}'>
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 5%;"><input type="checkbox" data-itemId="check-all" /></th>
+						<th style="width: 5%;">序号</th>
+						<th style="width: 10%;">配件编码</th>
+						<th style="width: 15%;">配件名称</th>
+						<th style="width: 10%;">订货量</th>
+						<th style="width: 10%;">特殊采购备注</th>
+						<th style="width: 10%;">最小包装数</th>
+						<th style="width: 10%;">小计（元）</th>
+						<th style="width: 10%;">操作</th>
+					</tr>
+				</thead>
+				<tbody data-id="grid-result">
+					<script type="text/template">
+					{{#list}}
+						<tr data-id="{{id}}">
+							<td><input type="checkbox" data-action="check" /></td>
+							<td>{{rowNumber}}</td>
+							<td><a href="/epc/detail?partNo={{partNo}}" class="text-link" target="_blank">{{partNo}}</a></td>
+							<td class="text-left">{{partName}}</td>
+							<td>
+								<span class="qty-box" data-itemId="qty-box" data-min="{{minQty}}" data-step="{{minQty}}">
+									<a data-action="reduce" class="qty-btn reduce" href="javascript:;">减少</a>
+									<input type="text" value="{{qty}}" data-valuetype="int" class="qty-input">
+									<a data-action="increase"  class="qty-btn increase" href="javascript:;">增加</a>	
+								</span>
+							</td>
+							<td>{{specialPurchaseNote}}</td>
+							<td>{{minQty}}</td>
+							<td class="price-value">{{totalPrice}}</td>
+							<td class="operation">
+								<a class="icon-btn delete" href="javascript:;"><span class="icon" data-action="delete"></span></span>
+								<a class="btn hide" href="javascript:;" data-action="confirm">删除</a>
+								<a class="btn hide" href="javascript:;" data-action="cancel">取消</a>
+							</td>
+						</tr>
+					{{/list}}
+					</script>
+				</tbody>
+			</table>
+		</div>
+		<div class="grid-operation2">
+			<input type="checkbox" data-itemId="check-all" />
+			<a class="icon-btn delete" href="javascript:;" id="delete-all">
+				<span class="icon"></span>
+				<span class="text">删除本页选中商品</span>
+			</a>
+		</div>
+		<div class="paging clearfix" id="cart-grid-paging">
+			<div class="page-info">
+				<span class="records">共<span data-id="recordCount">0</span>条记录</span>
+				<span class="slash">/</span>
+				<span class="page-count">共<span data-id="pageCount">0</span>页</span>
+				<span class="current">（当前第<span data-id="curPageView">1</span>页）</span>
+			</div>
+			<div class="pagination" data-id="btns">
+			    <a data-id="top" class="page-ctrl-btn top" href="javascript:void(0);"></a>
+			    <a data-id="prev" class="page-ctrl-btn prev" href="javascript:void(0);"></a>
+			    <a data-id="" class="text-link" href="javascript:void(0);"></a>
+			    <span class="page-btns" data-id="pageBtns">
+			    </span>
+			    <a data-id="next" class="page-ctrl-btn next" href="javascript:void(0);"></a>
+			    <a data-id="bottom" class="page-ctrl-btn bottom" href="javascript:void(0);"></a>
+			    <input data-id="curPage" class="input-box page-input" type="text">
+			    <a data-id="go" class="btn goto-btn" href="javascript:;">跳转</a>
+			</div>
+		</div>
+
+	</div>
+
+<!--end body-->
+<% include ../common/footer.ejs %>

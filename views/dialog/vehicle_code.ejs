@@ -1,0 +1,52 @@
+	<div class="layer vehicle-code-layer" id="vehicle-code-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">整车编码查询</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div class="vehicle-code-search" id="vehicle-code-query">
+				<div class="data-item">
+					<span class="label">
+						<span class="text">整车编码：</span>
+					</span>
+					<input type="text" data-name="vehicleCode" class="input-box">		
+				</div>
+				<div class="data-item operation">
+					<a class="btn" href="javascript:;" data-id="search">查询</a>
+					<a class="btn secondary" href="javascript:;" data-id="reset">清空</a>
+				</div>
+			</div>
+			<div class="tips-wrap">
+				<span class="tips error"><span class="icon"></span><span class="text"></span></span>
+			</div>
+			<div class="vehicle-code-search-cont" id="vehicle-code-result">
+				<script type="text/template">
+				{{#record}}
+				<div class="data-item">
+					<span class="label"><span class="text">整车编码：</span></span>
+					<span class="text-block" title="{{vehicleCode}}">{{vehicleCode}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">品牌：</span></span>
+					<span class="text-block" title="{{brandName}}">{{brandName}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">车系：</span></span>
+					<span class="text-block" title="{{seriesName}}">{{seriesName}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">车型组：</span></span>
+					<span class="text-block" title="{{modelGroupName}}">{{modelGroupName}}</span>
+				</div>
+				<div class="data-item long-item">
+					<span class="label"><span class="text">整编车型：</span></span>
+					<span class="text-block" title="{{modelName}}">{{modelName}}</span>
+				</div>
+				<div class="layer-operation">
+					{{#modelCode}}<a class="btn" href="/epc/model?modelCode={{modelCode}}&vehicleCode={{vehicleCode}}&from=vehicle">进入目录</a>{{/modelCode}}
+				</div>
+				{{/record}}
+				</script>
+			</div>
+		</div>
+	</div>

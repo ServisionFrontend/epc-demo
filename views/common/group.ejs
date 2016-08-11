@@ -1,0 +1,41 @@
+<div class="group" id="group">
+	<div class="group-head">组别</div>
+	<div class="group-body" id="group-body">
+		<ul>
+			<% if (groups && groups.length > 0) { %>
+				<% groups.forEach(function(group){ %>
+					<li data-code="<%= group.code %>">
+						<a href="javascript:;"  data-code="<%= group.code %>" title="<%= group.code %>.<%= group.name %>">
+				        	<span data-field="icon" class="icon"></span>
+				        	<span data-field="text" class="text"><%= group.code %>.<%= group.name %></span>		        	
+				        </a>
+				        <ul>
+				        	<% if(group.subGroup && group.subGroup.length > 0){ %>
+				        		<% group.subGroup.forEach(function(subgroup){ %>
+						        	<li data-subGroupCode="subgroup.code">
+						        		<a href="javascript:;"  data-code="<%= subgroup.code %>" title="<%= subgroup.code %>.<%= subgroup.name %>">
+								        	<span data-field="icon" class="icon"></span>
+								        	<span data-field="text" class="text"><%= subgroup.code %>.<%= subgroup.name %></span>
+								        </a>
+								        <ul>
+								        	<% if(subgroup.images && subgroup.images.length > 0){ %>
+												<% subgroup.images.forEach(function(image){ %>
+												<li>
+													<a href="javascript:;" data-name="<%= image.name %>" data-code="<%= image.code %>" data-svgFile="/epc/model/getSvg?urlPath=<%= image.svgFile %>" data-gifFile="<%= image.gifFile %>" class="leaf" title="<%= image.code %>.<%= image.name %>">
+														<span class="icon"></span>
+														<span class="text"><%= image.code %>.<%= image.name %></span>
+													</a>
+												</li>
+												<% }) %>
+											<% } %>
+								        </ul>
+						        	</li>
+						        	<% }) %>
+				        	<% } %>
+				        </ul>
+					</li>
+				<% }) %>
+			<% } %>
+		</ul>
+	</div>
+</div>

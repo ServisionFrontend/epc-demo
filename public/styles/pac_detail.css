@@ -1,0 +1,36 @@
+.main-cont .main-content .secondary-cont:first-child{
+	border-top-width: 1px;
+}
+.data-item.fix {
+	clear: both;
+}
+.data-item.single {
+	float: left;
+	min-width: 250px;
+}
+.data-item.single-right {
+	float: right;
+}
+.data-item.long-text .input-box{
+	width: 570px;
+}
+.data-item .text-link {
+	margin-right: 38px; 
+}
+.data-item.middle-text .btn{
+	margin-left: 0px;
+}
+.data-item.middle-text .text-link {
+	margin: 0 10px;
+}
+.data-item.single .form-select-option-list {
+	float: left;
+	width: 178px;
+	overflow: hidden;
+}
+.data-item.wrapper-item {
+	margin-left: -115px;
+}
+.reply-cont {
+	padding-top: 10px; 
+}

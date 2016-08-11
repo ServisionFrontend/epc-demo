@@ -1,0 +1,58 @@
+<%
+  viewBag.pageCode = 'step_second';
+  viewBag.cssFiles = ['pwd_info'];
+  viewBag.releaseCss = 'pwd_info.min';
+  viewBag.pageTitle = '找回密码';
+%>
+<% include ../common/head.ejs %>
+
+<div class="container">
+    <div class="header">
+        <div class="flag-title">
+            <span class="text-center">EPC电子配件目录</span>
+            <span class="text-after"></span>
+        </div>
+        <div class="center">
+            <div class="website-title">
+                <span class="web-title-text" title="北京汽车"></span>
+            </div>
+            <div class="menu clearfix">
+                <ul class="list">
+                    <li>
+                        <span>
+                            已有帐户,马上<a href="../login" class="wrap-line">登录</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="body_pwdinfo" class="body">
+        <div class="banner">
+            <div class="content">
+                <p class="c-title">找回密码</p>
+                <div class="c-content">
+                    <div class="icon-wrapper">
+                        <span class="mail-icon"></span>
+                    </div>
+                    <div class="mail-box">
+                        <span class="mail-text"></span><span class="warn-info">请前往邮箱查收邮件!</span>
+                    </div>
+                    <div class="c-last-version dark-info">
+                        <div>
+                            <span>请注意查收邮件，并按照邮件中的提示操作，完成安全认证</span>
+                        </div>
+                        <div>
+                            <span>没有收到邮件?</span>
+                            <a href="javascript:;" class="text-link3" data-action="send-mail">重新发送</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../common/footer.ejs %>

@@ -1,0 +1,93 @@
+<%
+  viewBag.pageCode = 'order_detail';
+  viewBag.cssFiles = ["shopping_cart"];
+  viewBag.releaseCss = 'shopping_cart.min';
+  viewBag.pageTitle = code + '_历史购物清单_';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+	<div class="page-banner" id="page-banner">
+		<span class="text">购物清单  <%= code %></span>
+	</div>
+
+	<div class="page-cont shopping-cart">
+		<div class="grid-search clearfix" id="order-detail-query">
+			<div class="data-item hide">
+				<span class="label">
+					<span title="orderId" class="text">orderId：</span>
+				</span>
+				<input data-name="orderId" type="text" value="<%= code %>" class="input-box">		
+			</div>	
+			<div class="data-item">
+				<span class="label">
+					<span title="配件编码" class="text">配件编码：</span>
+				</span>
+				<input data-name="partNo" type="text" class="input-box">		
+			</div>	
+			<div class="data-item search-operation">
+				<div class="operation">
+					<a class="btn" href="javascript:;" data-id="search">查询</a>
+					<a class="btn" href="javascript:;" data-id="reset">重置</a>
+				</div>
+			</div>
+		</div>
+		<div class="grid" id="order-detail-grid" data-urls='{"read": "/epc/orderDetail/query"}'>
+			<table>
+				<thead>
+					<tr>
+						<th style="width: 5%;">序号</th>
+						<th style="width: 10%;">配件编码</th>
+						<th style="width: 15%;">配件名称</th>
+						<th style="width: 15%;">订货量</th>
+						<th style="width: 15%;">特殊采购备注</th>
+						<th style="width: 15%;">最小包装数</th>
+						<th style="width: 10%;">订单金额（元）</th>
+						<th style="width: 10%;">操作</th>
+					</tr>
+				</thead>
+				<tbody data-id="grid-result">
+					<script type="text/template">
+					{{#list}}
+						<tr data-id="{{id}}" data-rownumber="{{rowNumber}}">
+							<td>{{rowNumber}}</td>
+							<td><a href="detail?partNo={{partNo}}" target="_blank" class="text-link">{{partNo}}</a></td>
+							<td>{{partName}}</td>
+							<td>{{qty}}</td>
+							<td>{{specialPurchaseNote}}</td>
+							<td>{{minQty}}</td>
+							<td class="price-value">{{price}}</td>
+							<td class="operation">
+								<a class="icon-btn add-cart" href="javascript:;"><span class="icon" data-action="add-cart"></span></span>
+							</td>
+						</tr>
+					{{/list}}
+					</script>
+				</tbody>
+			</table>
+		</div>
+		<div class="paging clearfix" id="order-detail-paging">
+			<div class="page-info">
+				<span class="records">共<span data-id="recordCount">0</span>条记录</span>
+				<span class="slash">/</span>
+				<span class="page-count">共<span data-id="pageCount">0</span>页</span>
+				<span class="current">（当前第<span data-id="curPageView">1</span>页）</span>
+			</div>
+			<div class="pagination" data-id="btns">
+			    <a data-id="top" class="page-ctrl-btn top" href="javascript:void(0);"></a>
+			    <a data-id="prev" class="page-ctrl-btn prev" href="javascript:void(0);"></a>
+			    <a data-id="" class="text-link" href="javascript:void(0);"></a>
+			    <span class="page-btns" data-id="pageBtns">
+			    </span>
+			    <a data-id="next" class="page-ctrl-btn next" href="javascript:void(0);"></a>
+			    <a data-id="bottom" class="page-ctrl-btn bottom" href="javascript:void(0);"></a>
+			    <input data-id="curPage" class="input-box page-input" type="text">
+			    <a data-id="go" class="btn goto-btn" href="javascript:;">跳转</a>
+			</div>
+		</div>
+
+	</div>
+
+<!--end body-->
+<% include ../common/footer.ejs %>

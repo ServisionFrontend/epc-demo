@@ -1,0 +1,64 @@
+<div class="detail-table-item suppersession" data-field="supersession">
+	<div class="grid" id="supersession-table" data-urls='{"read":"/epc/detail/getSupersession?partNo=<%= partInfo.partNo %>"}'>
+		<table>
+			<thead>
+				<tr>
+					<th style="width: 10%;" title="旧件编码/旧替换组编码">旧件编码/旧替换组编码</th>
+					<th style="width: 15%;" title="旧件名称/旧替换组描述">旧件名称/旧替换组描述</th>
+					<th style="width: 10%;" title="新件编码/新替换组编码">新件编码/新替换组编码</th>
+					<th style="width: 15%;" title="新件名称/新替换组描述">新件名称/新替换组描述</th>
+					<th style="width: 5%;">是否组替换</th>
+					<th style="width: 10%;">替换类型</th>
+					<th style="width: 10%;">断点时间</th>
+					<th style="width: 10%;">断点信息</th>
+					<th style="width: 10%;">备注</th>
+					<th style="width: 5%;">操作</th>
+				</tr>
+			</thead>
+			<tbody data-id="grid-result">
+				<script type="text/template">
+					{{#list}}
+					<tr>
+						<td title="{{oldCode}}">
+							{{#group}}
+								{{oldCode}}
+							{{/group}}
+							{{^group}}
+								{{#isOld}}
+									{{oldCode}}
+								{{/isOld}}
+								{{^isOld}}
+									<a href="/epc/detail?partNo={{oldCode}}" target="_blank" class="text-link">{{oldCode}}</a>
+								{{/isOld}}
+							{{/group}}
+						</td>
+						<td title="{{oldDesc}}">{{oldDesc}}</td>
+						<td title="{{newCode}}">
+							{{#group}}
+								{{newCode}}
+							{{/group}}
+							{{^group}}
+								{{#isNew}}
+									{{newCode}}
+								{{/isNew}}
+								{{^isNew}}
+									<a href="/epc/detail?partNo={{newCode}}" target="_blank" class="text-link">{{newCode}}</a>
+								{{/isNew}}
+							{{/group}}
+						</td>
+						<td title="{{newDesc}}">{{newDesc}}</td>
+						<td title="{{#group}}是{{/group}}{{^group}}否{{/group}}">{{#group}}是{{/group}}{{^group}}否{{/group}}</td>
+						<td title="{{substituteType}}">{{substituteType}}</td>
+						<td title="{{substituteType}}">{{substituteType}}</td>
+						<td title="{{breakPointNote}}">{{breakPointNote}}</td>
+						<td title="{{note}}">{{note}}</td>
+						<td>
+							{{#group}}<a data-action="supersession-detail" data-code="{{code}}" href="javascript:;">详情</a>{{/group}}
+						</td>
+					</tr>
+					{{/list}}
+				</script>
+			</tbody>
+		</table>
+	</div>
+</div>

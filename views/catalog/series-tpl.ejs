@@ -1,0 +1,14 @@
+<% brands.forEach(function (brand){ %>
+	<ul data-brandCode="<%= brand.code %>" class="list clearfix"  <% if (brand.code === brandCode) { %> style="display:block;" <% } else {%> style="display:none;" <% } %> >
+		<% brand.series.forEach(function (series){ %>
+		<li class="item  <% if (brand.activeCode == series.code) { %> checked <% }%>   " data-type="series" data-code="<%= series.code %>" data-text="<%= series.name %>">
+			<div class="img-wrap">
+				<a data-pjax="true" href="/epc/catalog?bc=<%= brand.code %>&sc=<%= series.code %>">
+					<img width="130" height="95" src="<%= series.imageFile %>" onerror="javascript:this.src='/res/image/nophoto_128_93.png'">
+				</a>
+			</div>
+			<p class="img-desc"><a href="javascript:;" class="text-link2" title="<%= series.name %>"><%= series.name %></a></p>
+		</li>
+		<% }) %>
+	</ul>
+<% }) %>

@@ -1,0 +1,99 @@
+.wrapper-knowledge-library {
+	padding:20px;
+}
+.wrapper-knowledge-library table{
+  border-collapse: collapse;
+  border: 1px solid #e3e3e3;
+  background-color: #ffffff;
+  min-width: 800px;
+  table-layout: fixed;
+}
+
+.wrapper-knowledge-library thead{
+  background-color: #f1f0f0;
+  height: 28px;
+  border: 1px solid #e3e3e3;
+}
+.wrapper-knowledge-library th{
+  font-weight: bold;
+}
+.wrapper-knowledge-library th{
+  padding:0 5px;
+  text-align: center;
+  height:24px;
+  line-height:24px;
+}
+.wrapper-knowledge-library td{
+  padding:0 5px;
+  text-align: center;
+  height:32px;
+  line-height:32px;
+}
+.wrapper-knowledge-library a{
+  display: block;
+  height:32px;
+  line-height: 32px;
+  padding: 0 5px 0 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color:#003c78;
+  text-decoration: underline;
+  background: url(images/unknow.gif) left center no-repeat;
+}
+.wrapper-knowledge-library th:first-child, .wrapper-knowledge-library td:first-child{
+  border-left: none;
+  text-align:left;
+}
+.wrapper-knowledge-library th:first-child + th,.wrapper-knowledge-library td:first-child + td{
+  text-align: right;
+}
+
+.wrapper-knowledge-library a.txt{
+  background: url(images/txt.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.pdf{
+  background: url(images/pdf.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.xls{
+  background: url(images/xls.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.xlsx{
+  background: url(images/xls.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.doc{
+  background: url(images/doc.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.docx{
+  background: url(images/doc.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.ppt{
+  background: url(images/ppt.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.ppt{
+  background: url(images/ppt.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.rar{
+  background: url(images/rar.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.zip{
+  background: url(images/rar.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.accdb{
+  background: url(images/db.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.mdb{
+  background: url(images/db.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.exe{
+  background: url(images/exe.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.htm{
+  background: url(images/html.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.html{
+  background: url(images/html.gif) left center no-repeat;
+}
+.wrapper-knowledge-library a.chm{
+  background: url(images/chm.gif) left center no-repeat;
+}

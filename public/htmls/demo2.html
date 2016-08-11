@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件样式</title>
+	<link rel="stylesheet" type="text/css" href="../styles/frame.css">
+	<link rel="stylesheet" type="text/css" href="../styles/common.css">
+</head>
+<body>
+	<div class="btn-wrapper">
+		<a href="javascript:;" class="btn middle">确定</a>
+		<a href="javascript:;" class="btn secondary">secondary</a>
+		<a href="javascript:;" class="btn">浏览</a>
+	</div>
+	<div>
+		<div class="data-item">
+			<span class="label">
+				<span class="text" title="维修站编码">修站编码编码边：</span>
+			</span>
+			<input class="input-box" type="text">		
+		</div>
+		<div class="data-item">
+			<span class="label">
+				<span class="text" title="维修站编码">修站编禁用：</span>
+			</span>
+			<input class="input-box disabled" type="text" disabled="disabled">		
+		</div>
+		<div class="data-item required" id="address-select-wrap" data-area="verify">
+			<span class="label"><span class="text">所在地区：</span></span>
+			<span class="form-select">
+				<input type="hidden" name="provinceId" class="form-select-input" autocomplete="off" value="">
+			    <a class="form-select-switch-btn" href="javascript:;"><span class="form-select-text" title="">请选择</span></a>
+			    <ul class="form-select-option-list" style="display: none;">
+			    	<li class="form-select-option" data-value="2987" title="全境">全境</li>
+			    	<li class="form-select-option" data-value="2986" title="全境3">全境</li>
+			    </ul>
+			</span>
+		</div>
+		<div class="data-item">
+			<span class="label"><span class="text">用户名：</span></span>
+			<span class="text-block">sunhaiyan</span>
+		</div>
+		<div class="data-item">
+			<span class="label"><span class="text">用户名：</span></span>
+			<textarea class="textarea-box"></textarea>
+		</div>
+	</div>
+	<div>
+		<span class="tip">
+			<span class="text">单个文件<4M,附件<5个</span>
+		</span>
+	</div>
+	
+	<script type="text/javascript" src="/scripts/libs/public/require.js"></script>
+	<script type="text/javascript">
+	  requirejs.config({
+	    baseUrl: '/scripts/',
+	    paths: {
+	      //lib
+	      jquery: 'libs/public/jquery-1.11.3.min.js',
+	      json2: 'libs/public/json2.js',
+	      domReady: 'libs/public/domReady.js',
+	      ajax: 'libs/private/ajax.js',
+	      jqForm: 'libs/public/jquery.form.js',
+	      mustache: "libs/public/mustache.js",
+	      amplify: "libs/public/amplify.min.js",
+	      text: "libs/public/text.js",
+	      jqueryUI: "libs/public/jquery-ui.js",
+	      jqueryDatepicker: "libs/public/jquery.ui.datepicker-zh_CN.js",
+	      md5: "libs/private/md5.js",
+	      jqExtend: "libs/private/jqExtend.js",
+
+	      //component
+	      blockUI: 'component/public/blockUI/jquery.blockUI.js',
+	      select: 'component/private/form_select.js',
+
+	      //app
+	      login: "app/login/main.js",
+
+	      //common
+	      group: "app/common/group.js",
+	      crumbs: "app/common/crumbs.js",
+
+	      //usage      
+	      legend: "app/usage/legend.js",
+	      parts: "app/usage/parts.js",
+	      layout: "app/usage/layout.js"
+
+
+	    },
+	    shim: {
+	      ajax: ['jquery'],
+	      jqForm: ['jquery'],
+	      jqExtend: ['jquery']
+	    }
+	  });
+</script>
+	<script type="text/javascript">
+		require(['jquery','select'],function() {
+
+		})
+	</script>
+	
+</body>
+</html>

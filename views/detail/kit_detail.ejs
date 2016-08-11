@@ -1,0 +1,73 @@
+	<div class="layer kit-detail-layer" id="kit-detail-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">维修包详情-<span data-id="kit-number"></span></span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div id="kit-detail-query" class="hide">
+				<div class="grid-search clearfix">
+					<div class="data-item">
+						<span class="label">
+							<span data-name="kitCode" class="text">维修包编码：</span>
+						</span>
+						<input type="text" class="input-box" data-name="kitCode">		
+					</div>
+					<div class="data-item">
+						<div class="layer-operation">
+							<a class="btn" href="javascript:;" data-id="search">查询</a>
+							<a class="btn" href="javascript:;" data-id="reset">重置</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid" id="kit-detail-grid" data-urls='{"read":"/epc/detail/getKitDetail"}'>
+				<table>
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>配件编码</th>
+							<th>配件名称</th>
+							<th>用量</th>
+							<th>供应商编码</th>
+							<th>供应商名称</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody data-id="grid-result">
+						<script type="text/template">
+						{{#list}}
+							<tr>
+								<td title="{{rowNumber}}">{{rowNumber}}</td>
+								<td title="{{partNo}}">{{partNo}}</td>
+								<td title="{{partName}}">{{partName}}</td>
+								<td title="{{qty}}">{{qty}}</td>
+								<td title="{{supplierCode}}">{{supplierCode}}</td>
+								<td title="{{supplierName}}">{{supplierName}}</td>
+								<td title="{{note}}">{{note}}</td>
+							</tr>
+						{{/list}}
+						</script>
+					</tbody>
+				</table>
+			</div>
+			<div class="paging clearfix" id="kit-detail-paging">
+				<div class="page-info">
+					<span class="records">共<span data-id="recordCount">0</span>条记录</span>
+					<span class="slash">/</span>
+					<span class="page-count">共<span data-id="pageCount">0</span>页</span>
+					<span class="current">（当前第<span data-id="curPageView">1</span>页）</span>
+				</div>
+				<div class="pagination" data-id="btns">
+				    <a data-id="top" class="page-ctrl-btn top" href="javascript:void(0);"></a>
+				    <a data-id="prev" class="page-ctrl-btn prev" href="javascript:void(0);"></a>
+				    <a data-id="" class="text-link" href="javascript:void(0);"></a>
+				    <span class="page-btns" data-id="pageBtns">
+				    </span>
+				    <a data-id="next" class="page-ctrl-btn next" href="javascript:void(0);"></a>
+				    <a data-id="bottom" class="page-ctrl-btn bottom" href="javascript:void(0);"></a>
+				    <input data-id="curPage" class="input-box page-input" type="text">
+				    <a data-id="go" class="btn goto-btn" href="javascript:;">跳转</a>
+				</div>
+			</div>
+		</div>
+	</div>

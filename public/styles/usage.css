@@ -1,0 +1,358 @@
+body {
+	position: relative;
+}
+.legend-parts-wrap {
+	display: none;
+	position: absolute;
+	left: 248px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.group-legend-toggle, .legend-parts-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20px;
+	background-image: url(images/expand_collapse_arrow.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.group-legend-toggle {
+	left: 0;
+	background-position: 0 center;
+}
+.group-legend-toggle.collapse {
+	background-position: -20px center;
+}
+.legend-parts-toggle {
+	right: 662px;
+	background-position: -20px center;
+}
+.legend-parts-toggle.collapse {
+	background-position: 0 center;
+}
+
+.legend-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20px;
+	right: 682px;
+	border: 1px solid #e7e7e7;
+}
+.legend-container .legend-head {
+	height: 28px;
+	line-height: 28px;
+	background-color: #f1f0f0;
+	border-bottom: 1px solid #e7e7e7;
+	text-align: center;
+	color: #555555;
+	font-weight: bold;
+}
+.legend-container .legend-body {
+	position: absolute;
+	top: 29px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.parts {
+	position: absolute;
+	width: 660px;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	border: 1px solid #e7e7e7;
+	background: #fff;
+}
+.parts .parts-head {
+	height: 28px;
+	line-height: 28px;
+	background-color: #f1f0f0;
+	border-bottom: 1px solid #e7e7e7;
+	text-align: center;
+	color: #555555;
+	font-weight: bold;
+	text-align: left;
+}
+.parts .parts-head ul {
+	font-size: 0;
+	*width: 100%;
+}
+.parts .parts-head li {	
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font-size: 12px;
+	text-align: center;
+}
+.parts .parts-head li span {
+	display: inline-block;
+	padding: 0 5px;
+}
+.parts .parts-body {
+	position: absolute;
+	top: 29px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.parts .row-number {
+	width: 60px;
+}
+.parts .part-number {
+	width: 150px;
+}
+.parts .part-name {
+	width: 200px;
+}
+.parts .change-width {
+	width: 180px;
+}
+.parts .qty {
+	width: 50px;
+}
+.parts .remark {
+	width: 100px;
+}
+.parts .model {
+	width: 50px;
+}
+.parts .operation {
+	width: 50px;
+}
+.parts .parts-body .list-item {
+	font-size: 0;
+	cursor: pointer;
+}
+.parts .parts-body .list-item:hover {
+	background-color: #e9f1ff;
+}
+.parts .parts-body .list-item.checked {
+	background-color: #e4ecfa;
+}
+.parts .parts-body .item {
+	vertical-align: top;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font-size: 12px;
+}
+.parts .parts-body .item-cont-wrap {
+	padding: 2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.parts .row-number .check-vin {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(images/check_vin.png) no-repeat center;
+}
+.parts .icon-wrap .icon {
+	display: inline-block;
+	width: 20px;
+	height: 18px;
+	background-image: url(images/parts_icon.png);
+	background-repeat: no-repeat;
+}
+.parts .icon.supersession {
+	background-position: 0 0;
+}
+.parts .icon.supersession.active {
+	background-position: 0 -20px;
+}
+.parts .icon.supersession.active:hover {
+	background-position: 0 -40px;
+}
+.parts .icon.copy {
+	background-position: -20px 0;
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+}
+.parts .icon.copy.active {
+	background-position: -20px -20px;
+}
+.parts .icon.copy.active:hover {
+	background-position: -20px -40px;
+}
+.parts .icon.image {
+	background-position: -40px 0;
+}
+.parts .icon.image.active {
+	background-position: -40px -20px;
+}
+.parts .icon.image.active:hover {
+	background-position: -40px -40px;
+}
+.parts .icon.price {
+	background-position: -60px 0;
+}
+.parts .icon.price.active {
+	background-position: -60px -20px;
+}
+.parts .icon.price.active:hover {
+	background-position: -60px -40px;
+}
+
+.parts .parts-body .list-item:hover .copy {
+	background-color: #e9f1ff;
+}
+
+.parts .parts-body .list-item.checked .copy {
+	background-color: #e4ecfa;
+}
+
+.parts .copy-text-box {
+	width: 12px;
+	height: 12px;
+	border: none;
+	position: absolute;
+	line-height: 0;
+	font-size: 12px;
+	z-index: -1;
+}
+
+.parts-body .part-number .number, .parts-body .part-name .name {
+	height: 22px;
+}
+
+.parts-body .part-number .number, .parts-body .part-name .name, .parts-body .part-name .date, .parts-body .remark .item-cont-wrap, .parts-body .model .model-first {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.parts .parts-body .operation {
+	vertical-align: bottom;
+}
+
+.legend-parts-wrap.collapse-group {
+	left: 0;
+}
+.group-legend-toggle.collapse {
+	left: 0;
+}
+.legend-parts-toggle.collapse {
+	right: 0;
+	left: auto;
+}
+
+.legend-container.collapse-group {
+	left: 20px;
+}
+.legend-container.collapse-parts {
+	right: 20px;
+	width: auto;
+}
+.legend-container.collapse-group.collapse-parts {
+	left: 20px;
+	right: 20px;
+	width: auto;
+}
+
+/*parts price */
+.parts-price {
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #d1291a;
+	z-index: 20;
+	padding: 0 5px;
+	height: 30px;
+	display: none;
+}
+.parts-price .arrow {
+	position: absolute;
+	z-index: 21;
+	left: -10px;
+	height: 0;
+	top: 10px;
+	line-height: 0;
+	font-size: 0;
+	width: 0;
+	border-style: solid;
+	border-width: 5px;
+	border-color: transparent #d1291a transparent transparent;
+}
+.parts-price .text {
+	color: #fff;
+	line-height: 30px;
+	height: 30px;
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+/*parts note*/
+.parts-note {
+	position: fixed;
+	display: block;
+	padding: 2px;
+	background-color: #d1291a;
+	width: 246px;
+	display: none;
+}
+.parts-note .arrow {
+	position: absolute;
+	left: 122px;
+	display: inline-block;
+	height: 0;
+	width: 0;
+	border-style: solid;
+	border-width: 6px;
+}
+.parts-note.bottom .arrow {
+	top: -12px;
+	border-color: transparent transparent #d1291a transparent;
+}
+.parts-note.top .arrow {
+	bottom: -12px;
+	border-color: #d1291a transparent transparent transparent;
+}
+.parts-note .head {
+	text-align: center;
+	background-color: #d1291a;
+	height: 25px;
+	line-height: 25px;
+}
+.parts-note .head .title {
+	color: #fff;
+	font-weight: bold;	
+}
+.parts-note .body {
+	background: #fff;
+}
+.parts-note .body ul {
+	padding: 3px 5px;
+}
+.parts-note .body li:first-child {
+	border-bottom: 1px dashed #e1e1e1;
+}
+.parts-note .body li {
+	padding: 5px 0;
+	position: relative;
+	min-height: 24px;
+}
+.parts-note .body li .label {
+	position: absolute;
+	width: 70px;
+	font-weight: bold;
+	line-height: 24px;
+	*left: 0;
+}
+.parts-note .body li .text {
+	word-break: break-all;
+	white-space: normal;
+	margin-left: 70px;
+	line-height: 24px;
+	display: block;
+}
+

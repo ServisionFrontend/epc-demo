@@ -1,0 +1,40 @@
+<%
+  viewBag.pageCode = 'catalog';
+  viewBag.cssFiles = ['crumbs', 'catalog'];
+  viewBag.releaseCss = 'catalog.min';
+  viewBag.pageTitle = '';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+
+<div class="page-crumbs" class="clearfix">
+	<div id="crumbs-wrap">
+		<% include ../common/crumbs.ejs %>
+	</div>
+	<% if(viewBag.hasOperation(viewBag.authCodes, 'epc:*', 'epc:list:*', 'epc:list:print')) { %>
+    <a id="btn-print" class="icon-btn print" href="javascript:;"><span class="icon"></span><span class="text">打印当前配件图册</span></a>
+  <% } %>
+</div>
+
+<!--begin body-->
+	<div class="page-cont">
+		<div class="catalog">
+			<div class="brand" id="brand-tab">
+				<ul class="list">
+				    <% include  ./brand-tpl.ejs %>
+				</ul>
+			</div>
+			<div class="series" id="series-wrap">
+				<% include ./series-tpl.ejs %>
+			</div>
+		</div>
+		<div class="model">
+			<div class="model-head">车型</div>
+			<div class="model-body" id="model-body">
+				<% include ./model-tpl.ejs %>
+			</div>
+		</div>
+	</div>
+<!--end body-->
+
+<% include ../common/footer.ejs %>

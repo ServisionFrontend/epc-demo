@@ -1,0 +1,84 @@
+<div class="parts" id="parts">
+  <div class="parts-head">
+    <ul>
+      <li class="row-number"><span>序号</span></li>
+      <li class="part-number"><span>配件编码</span></li>
+      <li class="part-name"><span>配件名称</span></li>
+      <li class="qty"><span>用量</span></li>
+      <li class="remark"><span>备注</span></li>
+      <li class="model"><span>适用</span></li>
+      <li class="operation"><span>操作</span></li>
+    </ul>
+  </div>
+  <div class="parts-body" id="parts-body">
+    <script type="text/template">
+      {{#records}}
+      <div data-field="row" class="list-item" data-id="{{id}}" data-callout="{{callout}}" data-partNo="{{partNo}}" data-partNote="{{partNote}}" data-usageNote="{{usageNote}}">
+        <div class="item row-number" title="{{callout}}">
+            <div class="item-cont-wrap text-center">
+              <span>{{callout}}</span><br >
+              {{#matchThisVin}}<span class="check-vin"></span>{{/matchThisVin}}
+            </div>
+        </div>
+        <div class="item part-number">
+            <div class="item-cont-wrap">
+                <div class="number" title="{{partNo}}"><a target="_blank" href="/epc/detail?partNo={{partNo}}" class="text-link">{{partNo}}</a></div>
+                <div class="icon-wrap">
+                    {{#hasSubstitute}}<a data-action="supersession" class="icon supersession active" href="javascript:;"></a>{{/hasSubstitute}}
+                    {{^hasSubstitute}}<a class="icon supersession"></a>{{/hasSubstitute}}     
+                    <input type="text" class="copy-text-box" value="{{partNo}}" />
+                    <a class="icon copy active" data-action="copy" {{#copyTitle}}title="{{copyTitle}}"{{/copyTitle}}></a>
+                    {{#hasPhoto}}<a class="icon image active" href="/epc/detail?partNo={{partNo}}"></a>{{/hasPhoto}}
+                    {{^hasPhoto}}<a class="icon image" href="javascript:;"></a>{{/hasPhoto}}
+                    <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:list:*','epc:list:price')) { %>
+                    {{#price}}<a class="icon price active" data-action="price" data-price="{{price}}"></a>{{/price}}
+                    {{^price}}<a class="icon price"></a>{{/price}}
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="item part-name">
+            <div class="item-cont-wrap">
+                <div class="name" title="{{partName}}"><span>{{partName}}</span></div>
+                <div class="date" title="{{startDate}}{{#endDate}}至{{endDate}}{{/endDate}}"><span>{{startDate}}{{#endDate}}至{{endDate}}{{/endDate}}</span></div>
+            </div>
+        </div>
+        <div class="item qty" title="{{qty}}">
+            <div class="item-cont-wrap text-center"><span>{{qty}}</span></div>
+        </div>
+        <div class="item remark" title="{{partNote}}{{#usageNote}}({{usageNote}}){{/usageNote}}">
+            <div class="item-cont-wrap"><span>{{partNote}}{{#usageNote}}({{usageNote}}){{/usageNote}}</span></div>
+        </div>
+        <div class="item model text-center">
+            <div class="item-cont-wrap">
+                <a href="javascript:;" data-action="applicability" class="text-link">查看</a>
+            </div>
+        </div>
+        <div class="item operation">
+            <% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:list:*','epc:shop:add')) { %>
+              <div class="item-cont-wrap text-center">
+                  <a href="javascript:;" data-action="buy" data-partNo="{{partNo}}" class="icon-btn add-cart"><span class="icon"></span><span class="text"></span></a>
+              </div>
+            <% } %>
+        </div>
+      </div>
+      {{/records}}
+    </script>
+  </div>      
+</div>
+
+<span class="parts-price" id="parts-price">
+    <span class="arrow"></span>
+    <span class="text"></span>
+</span>
+
+<div class="parts-note" id="parts-note">
+  <span class="arrow"></span>
+  <div class="head"><span class="title">备注详情</span></div>
+  <div class="body">
+    <ul>
+      <li><span class="label">配件备注：</span><span class="text part-note"></span></li>
+      <li><span class="label">用法备注：</span><span class="text usage-note"></span></li>
+    </ul>
+  </div>
+</div>

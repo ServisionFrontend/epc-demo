@@ -1,0 +1,16 @@
+<div class="legend-list" id="legend-list-wrap">
+		<ul class="clearfix" id="legend-list-cont">
+			<script type="text/template">
+			{{#records}}
+			<li title="{{code}}.{{name}}">
+				<div class="img-wrap">
+					<a href="javascript:;" data-code="{{code}}">
+						<img src="{{gifFile}}" onerror="javascript:this.src='/res/image/nophoto_195_278.png'" alt="{{name}}" width="195" height="278">
+					</a>
+				</div>
+				<p class="img-desc"><a href="javascript:;" data-code="{{code}}" >{{code}}.{{name}}</a></p>
+			</li>
+			{{/records}}
+			</script>
+		</ul>
+</div>

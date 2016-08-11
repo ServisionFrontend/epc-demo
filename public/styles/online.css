@@ -1,0 +1,163 @@
+.main-cont {
+
+}
+.main-cont .header {
+	height: 30px;
+	line-height: 30px;
+	background-color: #3e495d;
+	padding-left: 10px;
+}
+.main-cont .header .text {
+	color: #fff;
+}
+.main-cont .content {
+	padding: 10px;
+}
+.main-cont .content .item {
+	font-size: 14px;
+	font-weight: bold;
+}
+.data-item.single {
+	float: left;
+	min-width: 215px;
+}
+.data-item.fix {
+	clear: both;
+}
+.data-item.middle-text .btn{
+	margin-left: 0px;
+}
+.data-item.middle-text .text-link {
+	margin: 0 10px;
+}
+.data-item.link-text .text-link {
+	margin: 0 50px 0 20px;
+}
+
+.data-item.single .form-select-option-list {
+	float: left;
+	width: 178px;
+}
+#tab-cont {
+	padding-top: 5px;
+}
+.btn-wrapper {
+	clear: both;
+	padding: 25px 0 15px;
+	text-align: center;
+}
+.data-item .date-input-splite {
+	margin: 0 5px;
+	font-size: 14px;
+}
+.data-item .data-input-box {
+	width: 98px;
+}
+.textarea-box.small {
+	width: 200px;
+	height: 65px;
+}
+.layer.question-close-layer {
+	width: 400px;
+}
+.fixed-width {
+	max-width: 330px;
+}
+.fixed-width .icon-container{
+	*float: none;
+}
+
+
+
+.icon-container {
+	max-width: 20px;
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	position: relative;
+	float: right;
+	font-size: 14px;
+	vertical-align: top;
+	height: 28px;
+	line-height: 28px;
+}
+.icon-container .layer-header {
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	vertical-align: middle;
+	font-size: 0px;
+	color: #1c95e5;
+	cursor: pointer;
+	float: right;
+}
+.icon-container .layer-header .icon{
+	display: inline-block;
+	*zoom: 1;
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+	background-image: url('./images/tel_tip.png');
+	vertical-align: middle;
+}
+.icon-container .layer-header .text {
+	font-size: 14px;
+	vertical-align: middle;
+}
+.icon-container .detail {
+	position: absolute;
+	width: 420px;
+	z-index: 199;
+	right: -8px;
+	top: 25px;
+	display: none;
+	*zoom: 1;
+	text-align: left;
+}
+.icon-container:hover .detail{
+	display: block;
+}
+.icon-container .order-list-layer {
+	margin-top: 10px;
+	background-color: #ffffff;
+	border: solid 1px #e0dfdf; 
+	box-shadow: 1px 1px 6px -3px #000000;
+	padding: 10px 20px;
+}
+.icon-container .order-list-layer .title {
+	border-bottom: solid 1px #ebedeb;
+	margin-bottom: 10px;
+}
+.icon-container .order-list-layer .title .title-text {
+	display: inline-block;
+	font-size: 14px;
+	border-bottom: solid 2px #d94639;
+}
+.icon-container .order-list-layer .list-item {
+	padding: 0 10px;
+}
+
+.icon-container .order-list-layer .list-item .td-indent-cont {
+	padding-left: 8px;
+}
+.icon-container .detail .triangle-wrapper {
+	position: absolute;
+	z-index: 100;
+	right: 19px;
+	top: -10px;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid; 
+	border-color: transparent transparent #e0dfdf transparent ; 
+}
+.icon-container .detail .triangle {
+	position: absolute;
+	left: -10px;
+	top: -8px;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid; 
+	border-color: transparent transparent #ffffff transparent ; 
+}

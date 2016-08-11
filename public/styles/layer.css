@@ -1,0 +1,251 @@
+.layer .form-select-option-list {
+	z-index: 1;
+}
+
+.advanced-search-layer {
+	width: 1100px;
+	height: 630px;
+}
+
+.advanced-search-layer .layer-operation {
+	position: relative;
+}
+
+.advanced-search-layer .layer-operation .tips {
+	position: absolute;
+	right: 605px;
+	top: 11px;
+}
+
+.supersession-search-layer {
+	width: 900px;
+	height: 450px;
+}
+
+.supersession-search-layer .layer-operation {
+	padding: 0 0 0 20px;
+}
+
+.supersession-search-layer .grid-search {
+	margin: 10px 0;
+}
+
+.supersession-search-layer .tip-wrap {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px 0;
+}
+
+.supersession-search-layer .highlight {
+	color: red;
+}
+
+.kit-detail-layer {
+	width: 850px;
+	height: 425px;
+}
+
+.notice-search-layer {
+	width: 980px;
+	height: 560px;
+}
+
+.notice-search-layer .data-input-box {
+	width: 75px;
+}
+
+.notice-search-layer .layer-operation {
+	position: relative;
+}
+
+.notice-search-layer .notice-set {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+
+.vin-analysis-layer, .vehicle-code-layer {
+	width: 480px;
+}
+
+.vin-analysis-layer {
+	min-height: 480px;
+}
+
+.vehicle-code-layer {
+	height: 340px;
+}
+
+.user-info-layer, .modify-password-layer {
+	width: 400px;
+}
+
+.modify-email-layer {
+	width: 440px;
+}
+
+.advanced-search-layer .data-item, .supersession-search-layer .data-item, .notice-search-layer .data-item, .vin-analysis-layer .vin-analysis-search .data-item, .vehicle-code-layer .vehicle-code-search .data-item {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	*vertical-align: top;
+}
+
+.vin-analysis-layer .vin-analysis-search .data-item.operation, .vehicle-code-layer .vehicle-code-search .data-item.operation {
+	padding-left: 10px;
+}
+
+.vin-analysis-search-cont, .vehicle-code-search-cont {
+	border-top: 1px dashed #e7e7e7;
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+.vin-analysis-search-cont {
+	height: 370px;
+}
+
+.vehicle-code-search-cont {
+	height: 200px;
+}
+
+.vin-analysis-layer .input-box, .vehicle-code-search .input-box {
+	width: 190px;
+}
+
+.vin-analysis-search-cont .data-item, .vin-analysis-search-cont .data-item .label, .vin-analysis-search-cont .data-item .text-block {
+	line-height: 22px;
+	min-height: 22px;
+}
+
+.vin-analysis-search-cont .data-item .text-block{
+	max-width:345px;
+}
+
+.vehicle-code-search-cont .data-item, .vehicle-code-search-cont .data-item .label, .vehicle-code-search-cont .data-item .text-block {
+	height: 22px;
+	line-height: 22px;
+	min-height: 22px;
+}
+
+.vehicle-code-layer .tips-wrap, .vin-analysis-layer .tips-wrap {
+	display: none;
+	text-align: center;
+}
+
+.user-info-layer .phone .icon-btn {
+	margin-left: 20px;
+}
+
+.user-info-layer .phone input {
+	width: 120px;
+	margin-right: 10px;
+}
+
+.user-info-layer .data-item, .user-info-layer .data-item .label, .user-info-layer .data-item .text-block {
+	height: 22px;
+	line-height: 22px;
+	min-height: 22px;
+}
+
+.user-info-tip-layer {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.modify-password-layer .tip-wrap, .modify-email-layer .tip-wrap {
+	text-align: center;
+	height: 30px;
+}
+.modify-password-layer .tip, .modify-email-layer .tip {
+	margin: 0;
+}
+
+.supersession-detail-layer {
+	width: 1000px;
+	display: none;
+}
+
+.supersession-detail-layer .old, .supersession-detail-layer .new {
+	width: 480px;
+}
+.supersession-detail-layer .old{
+	float: left;
+}
+.supersession-detail-layer .new {
+	float: right;
+}
+.supersession-detail-layer .info li {
+	float: left;
+	width: 240px;
+	font-size: 0;
+	line-height: 22px;
+	*line-height: 30px;
+}
+.supersession-detail-layer .info li .label {
+	display: inline-block;
+	width: 100px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.supersession-detail-layer .info li .text {
+	display: inline-block;
+	width: 130px;
+	padding: 0 5px;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.supersession-detail-layer .mask {
+	border-top: 1px dashed #d2d2d2;
+	text-align: center;
+	margin: 10px 0;
+	height: 0;
+	line-height: 1px;
+}
+.supersession-detail-layer .mask .text {
+	position: relative;
+	margin-top: 0px;
+	background-color: #fff;
+	padding: 0 10px;
+}
+.supersession-detail-layer .grid {
+	border-top: 0;
+}
+.questionnaire-list-layer {
+	width: 900px;
+	
+}
+.questionnaire-list-layer .layer-cont-wrapper {
+	height: 286px;
+	overflow: auto;
+}
+#vehicle-code-result .data-item .label {
+	margin-left: -115px;
+}
+#vehicle-code-result .data-item{
+	padding-left: 115px;
+}
+
+#vehicle-code-result .data-item.long-item,
+#vehicle-code-result .data-item.long-item .text-block {
+	height: auto;
+	max-height: 44px;
+}
+#vehicle-code-result .data-item.long-item .text-block {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	display: -webkit-box;
+  	-webkit-line-clamp: 2;
+  	-webkit-box-orient: vertical;
+}
+#vehicle-code-result .data-item.long-item .label {
+	float: left;
+}

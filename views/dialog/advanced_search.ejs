@@ -1,0 +1,202 @@
+	<div class="layer advanced-search-layer" id="advanced-search-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">高级查询</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div id="advanced-search-query">
+				<div class="grid-search clearfix">
+					<div class="data-item required">
+						<span class="label">
+							<span title="品牌" class="text">品牌：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select" data-itemId="brand">
+					        <input type="hidden" autocomplete="off" data-name="brandCode" data-url="/epc/combo/brand" data-type="select" value="" class="form-select-input" data-notClearOption="true">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="车系" class="text">车系：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select">
+					        <input type="hidden" autocomplete="off" data-name="seriesCode" data-url="/epc/combo/series?parentCode=" data-type="select" value="" class="form-select-input">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="车型组" class="text">车型组：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select">
+					        <input type="hidden" autocomplete="off" data-name="modelGroupCode" data-url="/epc/combo/model?parentCode=" data-type="select" value="" class="form-select-input">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="整编车型" class="text">整编车型：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select">
+					        <input type="hidden" autocomplete="off" data-name="modelCode" data-url="/epc/combo/subModel?parentCode=" data-type="select" value="" class="form-select-input">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="主组" class="text">主组：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select">
+					        <input type="hidden" autocomplete="off" data-name="groupCode" data-url="/epc/combo/group?parentCode=" data-type="select" value="" class="form-select-input">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="分组" class="text">分组：</span>
+						</span>
+						<span class="form-select" data-special-select="form-select">
+					        <input type="hidden" autocomplete="off" data-name="subGroupCode" data-url="/epc/combo/subGroup?parentCode=" data-type="select" value="" class="form-select-input">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="" class="form-select-text">请选择</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        </ul>
+					     </span>
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="图例编码" class="text">图例编码：</span>
+						</span>
+						<input type="text" data-name="imageCode" class="input-box">		
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="图例名称" class="text">图例名称：</span>
+						</span>
+						<input type="text" data-name="imageName" class="input-box">		
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="配件编码" class="text">配件编码：</span>
+						</span>
+						<input type="text" data-name="partNo" class="input-box">		
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="配件名称" class="text">配件名称：</span>
+						</span>
+						<input type="text" data-name="partName" class="input-box">		
+					</div>
+					<div class="data-item">
+						<span class="label">
+							<span title="查询层级" class="text">查询层级：</span>
+						</span>
+						<span class="form-select" id="advanced-level-select">
+					        <input type="hidden" autocomplete="off" data-notReset="true" data-name="level" data-type="select" value="MODEL" class="form-select-input" data-notClearOption="true">
+					        <a href="javascript:;" class="form-select-switch-btn">
+					        	<span title="整车编码" class="form-select-text">整车编码</span>
+					        </a>
+					        <ul style="display: none;" class="form-select-option-list">
+					        	<li class="form-select-option currentOption" data-value="MODEL">整车编码</li>
+					        	<li class="form-select-option" data-value="MODELGROUP">车型组</li>
+					        	<li class="form-select-option" data-value="SERIES">车系</li>
+					        </ul>
+					     </span>
+					</div>
+				</div>
+				<div class="layer-operation">
+					<span data-itemId="tip" class="tips error hide"><span class="icon"></span><span class="text">请选择品牌</span></span>
+					<a class="btn" href="javascript:;" data-id="search">查询</a>
+					<a class="btn" href="javascript:;" data-id="reset">重置</a>
+				</div>
+			</div>
+			<div class="grid" id="advanced-search-grid" data-urls='{"read":"/epc/advancedSearch"}'>
+				<table id="advanced-search-grid-table">
+					<thead>
+						<tr>
+							<th data-field="rowNumber" style="width: 5%;">序号</th>
+							<th data-field="partNo" style="width: 8%;">配件编码</th>
+							<th data-field="partName" style="width: 10%;">配件名称</th>
+							<th data-field="qty" style="width: 5%;">用量</th>
+							<th data-field="startDate" style="width: 7%;">开始时间</th>
+							<th data-field="endDate" style="width: 7%;">结束时间</th>
+							<th data-field="brandName" style="width: 6%;">品牌</th>
+							<th data-field="seriesName" style="width: 6%;">车系</th>
+							<th data-field="modelName" style="width: 14%;">车型</th>
+							<th data-field="modelGroupName" style="width: 8%;">车型组</th>
+							<th data-field="imageCode" style="width: 8%;">图例编码</th>
+							<th data-field="imageName" style="width: 10%;">图例名称</th>
+							<th style="width: 103px;">操作</th>
+						</tr>
+					</thead>
+					<tbody data-id="grid-result">
+						<script type="text/template">
+						{{#list}}
+							<tr data-rownumber="{{rowNumber}}">
+								<td data-field="rowNumber" title="{{rowNumber}}">{{rowNumber}}</td>
+								<td data-field="partNo" title="{{partNo}}">{{partNo}}</td>
+								<td data-field="partName" title="{{partName}}">{{partName}}</td>
+								<td data-field="qty" title="{{qty}}">{{qty}}</td>
+								<td data-field="startDate" title="{{startDate}}">{{startDate}}</td>
+								<td data-field="endDate" title="{{endDate}}">{{endDate}}</td>
+								<td data-field="brandName" title="{{brandName}}">{{brandName}}</td>
+								<td data-field="seriesName" title="{{seriesName}}">{{seriesName}}</td>
+								<td data-field="modelName" title="{{modelName}}">{{modelName}}</td>
+								<td data-field="modelGroupName" title="{{modelGroupName}}">{{modelGroupName}}</td>
+								<td data-field="imageCode" title="{{imageCode}}">{{imageCode}}</td>
+								<td data-field="imageName" title="{{imageName}}">{{imageName}}</td>
+								<td>
+									<a href="/epc/model?brandCode={{#brandCode}}{{brandCode}}{{/brandCode}}&seriesCode={{#seriesCode}}{{seriesCode}}{{/seriesCode}}&modelGroupCode={{#modelGroupCode}}{{modelGroupCode}}{{/modelGroupCode}}&modelCode={{#modelCode}}{{modelCode}}{{/modelCode}}&imageCode={{#imageCode}}{{imageCode}}{{/imageCode}}" data-action="goto-catalog" class="icon-btn enter-catalog" title="进入目录"><span data-action="goto-catalog" class="icon"></span></a>
+									<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:advquery:*','epc:shop:add')) { %>
+									<a href="javascript:;" class="icon-btn add-cart" title="购买"><span data-action="add-cart" class="icon"></span></a>
+									<% } %>
+								</td>
+							</tr>
+						{{/list}}
+						</script>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="paging clearfix" id="advanced-search-paging">
+				<div class="page-info">
+					<span class="records">共<span data-id="recordCount">0</span>条记录</span>
+					<span class="slash">/</span>
+					<span class="page-count">共<span data-id="pageCount">0</span>页</span>
+					<span class="current">（当前第<span data-id="curPageView">1</span>页）</span>
+				</div>
+				<div class="pagination" data-id="btns">
+				    <a data-id="top" class="page-ctrl-btn disable top" href="javascript:void(0);"></a>
+				    <a data-id="prev" class="page-ctrl-btn disable prev" href="javascript:void(0);"></a>
+				    <a data-id="" class="text-link" href="javascript:void(0);"></a>
+				    <span class="page-btns" data-id="pageBtns">
+				    </span>
+				    <a data-id="next" class="page-ctrl-btn disable next" href="javascript:void(0);"></a>
+				    <a data-id="bottom" class="page-ctrl-btn disable bottom" href="javascript:void(0);"></a>
+				    <input data-id="curPage" class="input-box page-input" type="text">
+				    <a data-id="go" class="btn disable goto-btn" href="javascript:;">跳转</a>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,3 @@
+<% brands.forEach(function (brand){ %>
+	<li data-type="brand" data-code="<%= brand.code %>" data-text="<%= brand.name %>"  class="item active <% if (brand.code === brandCode) { %> checked  <% } %>" ><a data-pjax="true" data-name="brand" href="/epc/catalog?bc=<%= brand.code %>"><%= brand.name %></a></li>
+<% }) %>

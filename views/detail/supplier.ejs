@@ -1,0 +1,28 @@
+<div class="detail-table-item supplier" data-field="supplier">
+	<div class="grid" id="supplier-table" data-urls='{"read":"/epc/detail/getSupplier?partNo=<%= partInfo.partNo %>"}'>
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>供应商编码</th>
+					<th>供应商名称</th>
+					<th>供应商联系方式</th>
+					<th>备注</th>
+				</tr>
+			</thead>
+			<tbody data-id="grid-result">
+				<script type="text/template">
+					{{#list}}
+					<tr>
+						<td title="{{rowNumber}}">{{rowNumber}}</td>
+						<td title="{{code}}">{{code}}</td>
+						<td title="{{name}}">{{name}}</td>
+						<td title="{{phone}}">{{phone}}</td>
+						<td title="{{note}}">{{note}}</td>
+					</tr>
+					{{/list}}
+				</script>
+			</tbody>
+		</table>
+	</div>
+</div>

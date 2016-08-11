@@ -1,0 +1,72 @@
+	<div class="layer vin-analysis-layer" id="vin-analysis-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">VIN码解析</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div class="vin-analysis-search" id="vin-analysis-query">
+				<div class="data-item">
+					<span class="label">
+						<span class="text">VIN：</span>
+					</span>
+					<input type="text" data-name="vin" class="input-box">		
+				</div>
+				<div class="data-item operation">
+					<a class="btn" href="javascript:;" data-id="search">查询</a>
+					<a class="btn secondary" href="javascript:;" data-id="reset">清空</a>
+				</div>
+			</div>
+			<div class="tips-wrap">
+				<span class="tips error"><span class="icon"></span><span class="text"></span></span>
+			</div>
+			<div class="vin-analysis-search-cont" id="vin-analysis-result">
+				<script type="text/template">
+				{{#record}}
+					<div class="data-item">
+						<span class="label"><span class="text">VIN：</span></span>
+						<span class="text-block" title="{{vinNo}}">{{vinNo}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">生产日期：</span></span>
+						<span class="text-block" title="{{manufactureDate}}">{{manufactureDate}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">整车编码：</span></span>
+						<span class="text-block" title="{{vehicleCode}}">{{vehicleCode}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">整车描述：</span></span>
+						<span class="text-block" title="{{vehicleName}}">{{vehicleName}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">车型代码：</span></span>
+						<span class="text-block" title="{{modelCode}}">{{modelCode}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">车型名称：</span></span>
+						<span class="text-block" title="{{modelName}}">{{modelName}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">配置编码：</span></span>
+						<span class="text-block" title="{{configCode}}">{{configCode}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">配置名称：</span></span>
+						<span class="text-block" title="{{configName}}">{{configName}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">内饰：</span></span>
+						<span class="text-block" title="{{trimName}}">{{trimName}}</span>
+					</div>
+					<div class="data-item">
+						<span class="label"><span class="text">外饰：</span></span>
+						<span class="text-block" title="{{extrimName}}">{{extrimName}}</span>
+					</div>
+					<div class="layer-operation">
+						{{#modelCode}}<a class="btn" href="/epc/model?modelCode={{modelCode}}&vinNo={{vinNo}}&from=vin">进入目录</a>{{/modelCode}}
+					</div>
+				{{/record}}
+				</script>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <title>404未找到_北汽电子配件目录信息管理系统</title>
+    <% if (viewBag.isLocal) { %>
+    <link type="text/css" rel="stylesheet" href="/styles/error.css?v=<%= viewBag.releaseVersion %>"/>
+    <% } else { %>
+    <link type="text/css" rel="stylesheet" href="/release/styles/error.min.css?v=<%= viewBag.releaseVersion %>"/>
+    <% } %>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header clearfix">
+        <div class="page-related">EPC电子配件目录</div>
+        <div class="arrow"></div>
+    </div>
+    <div class="content">
+        <div class="logo_nav">
+            <span class="logo"></span>
+        </div>
+        <div class="detail">
+            <div class="epcm-error-text">
+                <span>
+                    后台管理打开失败，请联系系统管理员或返回
+                    <a href="/epc/catalog" class="text-link">首页</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

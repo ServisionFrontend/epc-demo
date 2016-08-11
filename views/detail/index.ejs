@@ -1,0 +1,87 @@
+<%
+  viewBag.pageCode = 'detail';
+  viewBag.cssFiles = ["detail"];
+  viewBag.releaseCss = 'detail.min';
+  viewBag.pageTitle = partInfo.partName + '_' + partInfo.partNo + '_';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+	<div class="page-banner" id="page-banner">
+		<span class="text">配件详情页</span>
+	</div>
+
+	<div class="page-cont detail">
+		<div class="part-info-wrap clearfix">
+			<% if(partInfo.photos.length == 0) { %>
+				<div class="part-big-img"><img id="focus-img" src="/res/image/nophoto_400_400.png" alt="" width="398" height="398"></div>
+			<% } else { %>
+				<div class="part-big-img"><img id="focus-img" src="" alt="" width="398" height="398"></div>
+			<% } %>
+			<div class="part-info">
+				<ul class="info-list clearfix">
+					<li><span class="label">配件编码：</span><span class="text" title="<%= partInfo.partNo %>"><%= partInfo.partNo %></span></li>
+					<li><span class="label">重量：</span><span class="text" title="<%= partInfo.weight %>"><%= partInfo.weight %></span></li>
+					<li><span class="label">配件名称：</span><span class="text" title="<%= partInfo.partName %>"><%= partInfo.partName %></span></li>
+					<li><span class="label">长：</span><span class="text" title="<%= partInfo.length %>"><%= partInfo.length %></span></li>
+					<li><span class="label">最小包装数：</span><span class="text" title="<%= partInfo.minQty %>"><%= partInfo.minQty %></span></li>
+					<li><span class="label">宽：</span><span class="text" title="<%= partInfo.width %>"><%= partInfo.width %></span></li>
+					<% if(viewBag.hasOperation(viewBag.authCodes, 'epc:*', 'epc:detail:*', 'epc:detail:price')) { %>
+					<li><span class="label">价格（元）：</span><span class="text" title="<%= partInfo.price %>"><%= partInfo.price %></span></li>
+					<% } %>
+					<li><span class="label">高：</span><span class="text" title="<%= partInfo.height %>"><%= partInfo.height %></span></li>
+					<li><span class="label">币种：</span><span class="text" title="人民币">人民币</span></li>
+					<li><span class="label">配件类型：</span><span class="text" title="<%= partInfo.type %>"><%= partInfo.type %></span></li>
+					<li><span class="label">规格型号：</span><span class="text longer" title="<%= partInfo.dimensionNo %>"><%= partInfo.dimensionNo %></span></li>
+					<li><span class="label">备注：</span><span class="text longer" title="<%= partInfo.note %>"><%= partInfo.note %></span></li>
+				</ul>
+				<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:shop:add')) { %>
+				<div class="operation"><a href="javascript:;" class="buy" data-partNo="<%= partInfo.partNo %>" id="detail-buy"><span class="icon"></span><span class="text">购买</span></a></div>
+				<% } %>
+
+				<div class="img-list">
+					<a href="javascript:;" class="arrow-left" id="arrow-left"></a>
+					<div class="list-container" id="img-list-container">
+						<ul class="list" id="img-list">
+							<% if (partInfo.photos.length > 0) { %>
+								<% partInfo.photos.forEach(function(photo){ %>
+									<li><img width="76" height="76" src="<%= photo.photoFile %>" /></li>
+								<% }) %>
+							<% } %>
+						</ul>
+					</div>
+					<a href="javascript:;" class="arrow-right" id="arrow-right"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="detail-table">
+			<div class="page-tab" id="tab-list">
+				<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:detail:provider')) { %>
+				<a class="item" data-field="supplier" href="javascript:;">供应商信息</a>
+				<% } %>
+				<a class="item" data-field="supersession" href="javascript:;">替换关系</a>
+				<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:detail:pkg')) { %>
+				<a class="item" data-field="kit" href="javascript:;">维修包</a>
+				<% } %>
+			</div>
+			<div class="detail-table-list" id="table-list">
+				<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:detail:provider')) { %>
+					<% include supplier.ejs %>
+				<% } %>
+				<% include supersession.ejs %>
+				<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:detail:pkg')) { %>
+					<% include kit.ejs %>
+				<% } %>
+			</div>
+		</div>
+
+	</div>
+
+<% if(viewBag.hasOperation(viewBag.authCodes,'epc:*','epc:detail:*','epc:detail:pkg')) { %>
+	<% include kit_detail.ejs %>
+<% } %>
+
+<!--end body-->
+<% include ../common/footer.ejs %>

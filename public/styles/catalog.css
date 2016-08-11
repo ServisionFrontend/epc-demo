@@ -1,0 +1,211 @@
+.page-cont {
+	position: absolute;
+	top: 143px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+.catalog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 350px;
+}
+.catalog .brand {
+	height: 30px;
+	position: relative;
+	z-index: 1;
+}
+.catalog .brand .list {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.catalog .brand .item {
+	float: left;
+	width: 136px;
+	height: 28px;
+	line-height: 28px;
+	margin-left: -1px;
+	background-color: #f1f0f0;
+	color: #555;
+	font-weight: bold;
+	border: 1px solid #e7e7e7;
+	text-align: center;
+}
+.catalog .brand .item a {
+	text-decoration: none;
+	color: #555;
+	display: inline-block;
+	width: 136px;
+	height: 28px;
+}
+.catalog .brand .item:first-child {
+	margin-left: 0;
+}
+.catalog .brand .item.checked {
+	height: 27px;	
+	background-color: #fff;
+	border-bottom: 2px solid #d1251a;
+}
+.catalog .brand .item.checked a {
+	color: #d1251a;
+}
+
+.catalog .series {
+	position: absolute;
+	top: 29px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 1px solid #e7e7e7;
+	padding: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.catalog .series .list {
+	margin-right: 10px;
+	display: none;
+}
+.catalog .series .item {
+	float: left;
+	width: 134px;
+	height: 130px;
+	margin: 0 10px 10px 0;
+}
+.catalog .series .item .img-wrap {
+	width: 132px;
+	height: 97px;
+	border: 1px solid #e7e7e7;
+}
+.catalog .series .item .img-wrap a {
+	outline: none;
+	display: inline-block;
+}
+.catalog .series .item .img-wrap a img {
+	display: inline-block;
+	width: 130px;
+	height: 95px;
+	border: 1px solid #fff;
+	outline: none;
+}
+.catalog .series .item .img-desc {
+	line-height: 35px;
+	color: #000;
+	margin: 0;
+}
+.catalog .series .item:hover .img-wrap, .catalog .series .item:hover .img-wrap img , .catalog .series .item.checked .img-wrap, .catalog .series .item.checked .img-wrap img {
+	border-color: #d1251a;
+}
+.catalog .series .item:hover .img-desc a {
+	color: #d1251a;
+	font-weight: bold;
+}
+
+.model {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 338px;
+	border: 1px solid #e7e7e7;
+}
+.model .model-head {
+	height: 28px;
+	line-height: 28px;
+	background-color: #f1f0f0;
+	border-bottom: 1px solid #e7e7e7;
+	text-align: center;
+	color: #555555;
+	font-weight: bold;
+}
+.model .model-body {
+	position: absolute;
+	top: 29px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 10px;
+}
+.model .model-body .all-model {
+	padding: 5px 0 5px 25px;
+}
+.model .model-body .all-model .text-link2:hover {
+	color: #d1291a;
+}
+.model .model-body .type {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 0;
+	text-decoration: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.model .model-body .type .icon {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-image: url(images/expand_collapse_icon.png);
+	vertical-align: middle;
+	font-size: 12px;
+	cursor: pointer;
+}
+.model .model-body .type .link {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+	margin-left: 14px;
+	color: #333333;
+	text-decoration: none;
+}
+.model .model-body .type-item.checked .icon {
+	background-position: 0 -12px;
+}
+.model .model-body .type-item.checked .text {
+	color: #d1251a;
+	font-weight: bold;
+}
+.model .model-body .type:hover .link {
+	color: #d1291a;
+}
+.model .model-body .model-list {
+	padding-left: 26px;
+	display: none;
+}
+.model .model-body .checked .model-list {
+	display: block;
+}
+.model .model-body .model-item {
+	line-height: 30px;
+	font-size: 0;
+	position: relative;
+	padding-left: 10px;
+}
+.model .model-body .model-item .icon {
+	background-color: #cacaca;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	left: 0;
+	top: 13px;
+}
+.model .model-body .model-item .link {
+	display: inline-block;
+	font-size: 12px;
+	margin-left: 5px;
+	color: #333333;
+	text-decoration: none;
+}
+.model .model-body .model-item:hover .icon {
+	background-color: #d1251a;
+}
+.model .model-body .model-item:hover .link{
+	color: #d1251a;
+}

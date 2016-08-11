@@ -1,0 +1,52 @@
+	<div class="layer user-info-layer" id="user-info-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">用户信息</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper" id="user-info-body">
+			<script type="text/template">
+				{{#record}}
+				<div class="data-item">
+					<span class="label"><span class="text">姓名：</span></span>
+					<span class="text-block" title="{{realName}}">{{realName}}</span>
+				</div>
+				<div class="data-item phone">
+					<span class="label"><span class="text">联系电话：</span></span>
+					<span class="text-block" data-field="phone-info" title="{{telephone}}">
+						{{telephone}}
+						<a class="icon-btn edit" data-id="edit" href="javascript:;"><span class="icon"></span></a>
+					</span>
+					<span class="hide" data-field="phone-edit">
+						<input type="text" data-name="phone" class="input-box">
+						<a class="btn" href="javascript:;" data-id="save">保存</a>
+						<a class="btn" href="javascript:;" data-id="cancel">取消</a>
+					</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">邮箱：</span></span>
+					<span class="text-block" title="<%= viewBag.mail %>"><%= viewBag.mail %></span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">用户类型：</span></span>
+					<span class="text-block" title="{{userTypeName}}">{{userTypeName}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">到期时间：</span></span>
+					<span class="text-block" title="{{expirationTime}}">{{expirationTime}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">维修站编码：</span></span>
+					<span class="text-block" title="{{enterpriseCode}}">{{enterpriseCode}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">维修站名称：</span></span>
+					<span class="text-block" title="{{enterpriseName}}">{{enterpriseName}}</span>
+				</div>
+				<div class="data-item">
+					<span class="label"><span class="text">维修站地址：</span></span>
+					<span class="text-block" title="{{enterpriseAddress}}">{{enterpriseAddress}}</span>
+				</div>
+				{{/record}}
+			</script>
+		</div>
+	</div>

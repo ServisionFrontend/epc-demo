@@ -1,0 +1,43 @@
+.shopping-cart {
+	padding: 10px;
+	position: relative;;
+}
+.shopping-cart .data-item {
+	display: inline-block;
+}
+.shopping-cart .search-operation {
+	padding-left: 10px;
+}
+.shopping-cart .grid-search {
+	margin-bottom: 5px;
+}
+.shopping-cart .grid .qty-box {
+	vertical-align: top;
+}
+.shopping-cart .grid td.operation .btn {
+	padding: 2px 5px;
+	margin: 0;
+}
+.shopping-cart .grid-operation1 {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
+.shopping-cart .grid-operation2 {
+	padding: 5px 0 0 33px;
+}
+.shopping-cart .grid-operation2 input {
+	vertical-align: top;
+}
+.shopping-cart .grid-operation2 .icon-btn {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.shopping-cart-banner .text-link {
+	color: #fff;
+	font-weight: bold;
+	float: right;
+	margin-right: 10px;
+	text-decoration: none;
+}

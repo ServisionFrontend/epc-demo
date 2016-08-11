@@ -1,0 +1,20 @@
+<div class="all-model"><a class="text-link2" data-id="all-model" href="/epc/model">全部车型</a></div>
+<% models.forEach(function (model) { %>
+		<ul class="type-list">
+			<li class="type-item">
+				<div>
+					<span class="type" data-code="<%= model.code %>">
+						<span class="icon" data-action="toggle"></span>
+						<a href="/epc/model?brandCode=<%= brandCode %>&seriesCode=<%= model.brandCode %>&modelGroupCode=<%= model.code %>" class="link"><%= model.name %></a>
+					</span>
+				</div>
+				<ul class="model-list">
+					<% model.models.forEach(function (item) { %>
+
+					<li class="model-item"><span class="icon"></span><a href="/epc/model?brandCode=<%= brandCode %>&seriesCode=<%= seriesCode %>&modelCode=<%= item.code %>" class="link"><%= item.name %></a></li>
+
+					<% }) %>
+				</ul>
+			</li>
+		</ul>
+<% }) %>

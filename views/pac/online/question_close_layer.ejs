@@ -1,0 +1,63 @@
+<div class="layer question-close-layer" id="question-close-dialog">
+    <div class="layer-title">
+        <span class="page-title">
+            <span class="text">关闭问题</span>
+        </span>
+        <a class="layer-close-btn" href="javascript:;"></a>
+    </div>
+    <div class="layer-cont-wrapper">
+        <form class="question-comment-form">
+            <input type="hidden" id="question-code" value="">
+            <div class="data-item" data-name="question-number">
+                <span class="label">
+                    <span class="text">问题编码：</span>
+                </span>
+                <span class="text-block"></span>
+            </div>
+            <div class="data-item" data-name="question-status">
+                <span class="label">
+                    <span class="text">问题状态：</span>
+                </span>
+                <span class="text-block"></span>
+            </div>
+            <div class="data-item" data-name="question-subject">
+                <span class="label">
+                    <span class="text">问题主题：</span>
+                </span>
+                <span class="text-block"></span>
+            </div>
+            <div class="data-item required" id="service-quality-wrap">
+                <span class="label">
+                    <span class="text">服务质量：</span>
+                </span>
+                <span class="form-select">
+                    <input type="hidden" class="form-select-input" autocomplete="off" name="quality" data-name="quality" data-null="false" value="">
+                    <a class="form-select-switch-btn" href="javascript:;">
+                        <span class="form-select-text" title=""></span>
+                    </a>
+                    <ul id="service-quality" class="form-select-option-list" style="display: none;">
+                        <script id="service-quality-template" type="text/template">
+                        {{#qulityList}}
+                            <li class="form-select-option" data-value="{{code}}" title="{{name}}">{{name}}</li>
+                        {{/qulityList}}
+                    </script>
+                    </ul>
+                </span>
+            </div>
+            <div class="data-item">
+                <span class="label">
+                    <span class="text" title="服务质量评语">服务质量评语：</span>
+                </span>
+                <textarea class="textarea-box small num-limit-short" name="qualityComment" data-encode="true" max-length="200"></textarea>
+                <span class="text-num-tip line">已输入 <span class="text-exist">0</span> 字，还能输入 <span class="text-remain">200</span> 字</span>
+            </div>
+            <div class="data-item">
+                <span class="label">
+                    <span class="text"></span>
+                </span>
+                <a href="javascript:;" class="btn"  data-action="close-question">关闭问题</a>
+                <a href="javascript:;" class="btn secondary"  data-action="cancel">取消</a>
+            </div>
+        </form>
+    </div>
+</div>

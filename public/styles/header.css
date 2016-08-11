@@ -1,0 +1,99 @@
+.page-header {
+	height: 74px;
+}
+.page-header .logo {
+	width: 254px;
+	height: 65px;
+	margin: 4px 0 0 8px;
+	display: inline-block;
+	float: left;
+}
+.page-header .logo img {
+	border: none;
+	width: 254px;
+	height: 65px;
+}
+.page-header .search-box {
+	width: 433px;
+	height: 32px;
+	margin: 17px 0 0 33px;
+	border: 2px solid #d1251a;
+	font-size: 0;
+	float: left;
+	position: relative;
+	z-index: 61;
+}
+.page-header .search-box .form-select {
+	width: 97px;
+	height: 32px;
+	border-style: solid;
+	border-color: #d3d3d3;
+	border-width: 0 1px 0 0;
+	vertical-align: top;
+}
+.page-header .search-box .form-select-switch-btn {
+	border: none;
+	height: 32px;
+	line-height: 32px;
+}
+.page-header .search-box .form-select-text {
+	height: 32px;
+}
+.page-header .search-box .search-input {
+	width: 255px;
+	height: 24px;
+	padding: 4px 5px;
+	line-height: 24px;
+	outline: none;
+	border: none;
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: top;
+	*height: 23px;
+}
+.page-header .search-box .search-input::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+} 
+.page-header .search-box .search-input.short {
+	width: 234px;
+}
+.page-header .search-box .search-btn {
+	width: 68px;
+	height: 32px;
+	border-left: 2px solid #d1251a;
+	background-color: #d1251a;
+	font-size: 14px;
+	text-align: center;
+	line-height: 32px;
+	vertical-align: top;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+}
+.page-header .search-box .search-close {
+	display: none;
+	width: 16px;
+	height: 16px;
+	background: #dadada url(images/close_icon.png) no-repeat;
+	border-radius: 8px;
+	font-size: 0;
+	margin: 7px 5px 0 0;
+}
+.page-header .search-box .search-close.show {
+	display: inline-block;
+}
+.page-header .search-box .search-close:hover {
+	background-color: #d1291a;
+}
+
+.page-header .other-search {
+	float: left;
+	margin: 17px 0 0 25px;
+}
+.page-header .other-search .item {
+	float: left;
+	margin: 0 15px;
+	line-height: 36px;
+}

@@ -1,0 +1,305 @@
+﻿/* svg style*/
+.svg-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.svg-wrap svg {
+     width: 100%;
+     height: 100%;
+     position:relative;
+}
+
+
+/*----------------------------------------------------------------------*/
+
+/* tool1 style */
+.icon-bg {
+    width: 16px;
+    height: 17px;
+    display: inline-block;
+    background: url("../res/icon-bg.gif") no-repeat;
+    position: absolute;
+}
+
+.icon-main {
+    overflow: hidden;
+    zoom: 1;
+    background: url("../res/background.gif") no-repeat;
+    height: 66px;
+    width: 96px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: move;
+    opacity: 0.8;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+}
+
+.icon-main .icon-left {
+    float: left;
+    position: relative;
+    margin: 10px 5px;
+    width: 20px;
+}
+
+.icon-main .icon-right {
+    float: right;
+    position: relative;
+    width: 60px;
+    margin: 5px 0;
+}
+
+.zoomIn-icon {
+    background-position: 0 0px;
+    top: 0;
+    left: 0;
+}
+
+.zoomIn-icon:hover {
+    background-position: 0 -23px;
+}
+
+.zoomOut-icon {
+    background-position: -20px 0;
+    top: 25px;
+    left: 0;
+}
+
+.zoomOut-icon:hover {
+    background-position: -20px -23px;
+}
+
+.up-icon {
+    background-position: -126px 0px;
+    top: 0;
+    left: 18px;
+}
+
+.up-icon:hover {
+    background-position: -126px -23px;
+}
+
+.right-icon {
+    background-position: -83px 0;
+    top: 18px;
+    left: 36px;
+}
+
+.right-icon:hover {
+    background-position: -83px -23px;
+}
+
+.down-icon {
+    background-position: -105px 0;
+    left: 18px;
+    top: 36px;
+}
+
+.down-icon:hover {
+    background-position: -105px -23px;
+}
+
+.left-icon {
+    background-position: -60px 0;
+    top: 18px;
+    left: 0;
+}
+
+.left-icon:hover {
+    background-position: -60px -23px;
+}
+
+.reset-icon {
+    background-position: -40px 0;
+    top: 18px;
+    left: 18px;
+}
+
+.reset-icon:hover {
+    background-position: -40px -23px;
+}
+
+
+/* tool2 style */
+.assistive-toolBg {
+    background: url("../res/assistive-tool-bg.png") no-repeat;
+    display: block;
+}
+
+.assistive-tool {
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: move;
+    zoom: 1;
+    z-index: 60;
+    border-radius: 5px;
+}
+
+.assistive-toolContent {
+    background-color: #242021;
+    height: 29px;
+    overflow: hidden;
+    zoom: 1;
+    padding: 0 10px;
+}
+
+.assistive-toolContent a {
+    margin: 6px 5px;
+    height: 18px;
+    width: 18px;
+    float: left;
+}
+
+.assistive-toolContent .assistive-tool-normal {
+    background-position: -25px -34px;
+}
+
+.assistive-toolContent .assistive-tool-normal:hover {
+    background-position: 0 -34px;
+}
+
+.assistive-toolContent .assistive-tool-small {
+    background-position: -25px -65px;
+}
+
+.assistive-toolContent .assistive-tool-small:hover {
+    background-position: 0 -65px;
+}
+
+.assistive-toolContent .assistive-tool-big {
+    background-position: -25px -96px;
+}
+
+.assistive-toolContent .assistive-tool-big:hover {
+    background-position: 0 -96px;
+}
+
+.assistive-toolContent .assistive-tool-print {
+    background-position: -25px -125px;
+}
+
+.assistive-toolContent .assistive-tool-print:hover {
+    background-position: 0 -125px;
+}
+
+
+/* tool3 style */
+.assistive-tool3 {
+    /*width: 140px;*/
+    height: 30px;
+    border-radius: 5px;
+    background: #A7CDF1;
+    position: absolute;
+    cursor: move;
+    z-index:60;
+}
+
+.assistive-tool3 a {
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin: 6px 5px;
+    width: 18px;
+    background: url("../res/svg-tool-bg3.png") no-repeat;
+    cursor: pointer;
+}
+
+/* reset */
+.assistive-tool3 .assistive-tool-reset {
+    background-position: 0 0;
+}
+
+.assistive-tool3 .assistive-tool-reset:hover {
+    background-position: -22px 0;
+}
+
+.assistive-tool3 .assistive-tool-reset-disabled {
+    background-position: -47px 0;
+}
+
+/* zoomout */
+.assistive-tool3 .assistive-tool-zoomout {
+    background-position: 0 -26px;
+}
+
+.assistive-tool3 .assistive-tool-zoomout:hover {
+    background-position: -23px -26px;
+}
+
+.assistive-tool3 .assistive-tool-zoomout-disabled {
+    background-position: -47px -26px;
+}
+
+/* zoomin */
+.assistive-tool3 .assistive-tool-zoomin {
+    background-position: 0 -54px;
+}
+
+.assistive-tool3 .assistive-tool-zoomin:hover {
+    background-position: -23px -54px;
+}
+
+.assistive-tool3 .assistive-tool-zoomin-disabled {
+    background-position: -47px -54px;
+}
+
+/* left rotate */
+.assistive-tool3 .assistive-tool-left-rotate{
+    background-position: 0 -160px;
+}
+
+.assistive-tool3 .assistive-tool-left-rotate:hover {
+    background-position: -22px -160px;
+}
+
+.assistive-tool3 .assistive-tool-left-rotate-disabled {
+    background-position: -47px -160px;
+}
+
+/* right rotate */
+.assistive-tool3 .assistive-tool-right-rotate {
+    background-position: 0 -188px;
+}
+
+.assistive-tool3 .assistive-tool-right-rotate:hover {
+    background-position: -22px -188px;
+}
+
+.assistive-tool3 .assistive-tool-right-rotate-disabled {
+    background-position: -47px -188px;
+}
+
+/* prev */
+.assistive-tool3 .assistive-tool-prev {
+    background-position: 0 -112px;
+}
+.assistive-tool3 .assistive-tool-prev:hover {
+    background-position: -22px -112px;
+}
+
+/* next */
+.assistive-tool3 .assistive-tool-next {
+    background-position: 0 -137px;
+}
+.assistive-tool3 .assistive-tool-next:hover {
+    background-position: -24px -137px;
+}
+
+/* print */
+.assistive-tool3 .assistive-tool-print {
+    background-position: 0 -83px;
+}
+.assistive-tool3 .assistive-tool-print:hover {
+    background-position: -24px -83px;
+}

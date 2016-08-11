@@ -1,0 +1,72 @@
+<%
+  viewBag.pageCode = 'survey';
+  viewBag.cssFiles = ['pac_query'];
+  viewBag.releaseCss = 'pac_query.min';
+  viewBag.pageTitle = '问卷调查'
+%>
+
+<% include ../../common/head.ejs %>
+
+	<div class="wrapper">
+		<div class="header clearfix">
+			<div class="page-related">
+				EPC电子配件目录
+			</div>
+			<div class="arrow"></div>
+		</div>
+		<div class="content">
+			<div class="logo_nav">
+				<span class="logo"></span>
+				<a href="javascript:;" class="text-link big-text close-btn" data-name="cancel">关闭</a>
+			</div>
+			<div class="title">
+				<span class="title-text"><%=data.subject %></span>
+				<div class="title-bg-car"></div>
+			</div>
+			<div class="detail">
+				<div class="head-tip">
+					<span>非常感谢您参与我们的问卷调查，调查的目的是为了我们更好的为你们服务！</span>
+				</div>
+				<div class="personal-info">
+					<div class="data-item disabled">
+						<span class="label short-label">
+							<span class="text" title="账户名称">账户名称：</span>
+						</span>
+						<input class="input-box" type="text" data-name="usercode" value="<%=usercode %>" disabled="disabled">
+						<span class="label">
+							<span class="text" title="姓名">姓名：</span>
+						</span>
+						<input class="input-box" type="text" value="<%= data.respondent%>" data-name="name">
+						<span class="label required">
+							<span class="text" title="手机">手机：</span>
+						</span>
+						<input class="input-box" type="text" value="<%= data.phone%>" data-name="phone" data-null="false">
+					</div>
+				</div>
+				<form class="questions" id="question-wrapper" data-code="<%=data.questionnaireCode %>">
+					<%if(data.questions && data.questions.length > 0) {%>
+						<% data.questions.forEach(function(listitem){%>
+							<div class="question-box required">
+								<div class="label">
+									<span><%-listitem.question%></span>
+								</div>
+								
+								<textarea class="textarea-box" data-code="<%=listitem.code %>" data-null="false"><%- listitem.answer %></textarea>
+								
+							</div>
+						<% }) %>
+						
+					<% }%>
+				</form>
+				<% if(!answered){ %>
+				<div class="btn-wrapper">
+					<a href="javascript:;" class="btn middle" data-name="submit">提交</a>
+					<a href="javascript:;" class="btn middle secondary" data-name="cancel">取消</a>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/scripts/bootstrap.js"></script>
+</body>
+</html>

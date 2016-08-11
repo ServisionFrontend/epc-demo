@@ -1,0 +1,30 @@
+<div class="nav-item-layer cart" id="header-cart">
+	<span class="arrow"></span>
+	<div class="cart-head">
+		<span class="text">购物车</span>
+	</div>
+	<div class="cart-body">
+		<ul id="header-cart-list">
+			<script type="text/template">
+			{{#list}}
+				<li data-id="{{id}}" class="clearfix">
+					<span class="part-info item">
+						<a title="{{partNo}}" class="text-link part-no" href="/epc/detail?partNo={{partNo}}">{{partNo}}</a>
+						<span title="{{partName}}" class="part-name">{{partName}}</span>
+					</span>
+					<span class="qty item" title="{{qty}}">{{qty}}</span>
+					<span class="operation item">
+						<a data-action="confirm" class="btn hide" href="javascript:;">删除</a>
+						<a data-action="cancel" class="btn hide" href="javascript:;">取消</a>
+						<a data-action="delete" class="icon-btn delete" href="javascript:;"><span class="icon"></span></a>
+					</span>
+				</li>
+			{{/list}}
+			</script>
+		</ul>
+	</div>
+	<div class="cart-foot">
+		<div class="desc"><span class="text">共<span class="count" data-itemid="count">0</span>件商品</span></div>
+		<a class="btn" target="_blank" href="/epc/cart">打开购物车</a>
+	</div>
+</div>

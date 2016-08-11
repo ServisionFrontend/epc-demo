@@ -1,0 +1,175 @@
+html {
+    font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    *background: #8D9093;
+}
+
+.box-login {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    background: url("images/login_bg.png") no-repeat center #8D9093;
+}
+
+.wrap {
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+    *top: 50%;
+    *height: auto;
+}
+
+.wrap .wrap-row {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    *top: -50%;
+    z-index: 10;
+}
+
+.container {
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 2px;
+    width: 460px;
+    padding-bottom: 10px;
+    opacity: .95;
+    box-shadow: 0px 0px 50px 5px rgba(132, 134, 139, .5);
+}
+
+.container .header {
+    padding: 18px 0 14px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d1251a;
+    text-align: center;
+}
+
+.msg-box {
+    visibility: visible;
+    height: 27px;
+    text-align: center;
+}
+
+.msg-box .msg {
+    display: none;
+}
+
+.container .body {
+    font-weight: bold;
+    width: 280px;
+    margin: 10px auto;
+}
+
+.row,
+.row .cell {
+    float: left;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+.row-login {
+    height: 36px;
+    line-height: 36px;
+    margin: 5px 0;
+}
+
+.row-login .label {
+    width: 70px;
+}
+
+.row-login .textbox input[type=text],
+.row-login .textbox input[type=password] {
+    color: #898989;
+    height: 32px;
+    width: 175px;
+    padding: 0 0 0 5px;
+    line-height: 32px;
+}
+
+.row-login .star-symbol {
+    color: #f00;
+    font-size: 14px;
+    padding: 5px;
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+}
+
+.row-login .btn-login {
+    font-weight: bold;
+    width: 252px;
+    background: #d1251a;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+}
+
+.row-login .btn-login:hover {
+    cursor: pointer;
+    background: #ff3333;
+    transition: all .2s ease;
+}
+
+.text-wrap {
+    width: 250px;
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: normal;
+    height: 16px;
+    line-height: 16px;
+}
+
+.row-login .forget-pwd {
+    color: #224e82;
+}
+
+.row-login .download-cert {
+    color: #224e82;
+    float:right;
+}
+
+.row-login .text-desc {
+    float: right;
+}
+
+.form-select-login {
+    height: 34px;
+    width: 182px;
+}
+
+.form-select-login .form-select-switch-btn {
+    color: #898989;
+    height: 32px;
+    line-height: 32px;
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}

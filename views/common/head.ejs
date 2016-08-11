@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <title><%= viewBag.pageTitle %>北汽电子配件目录信息管理系统</title>
+
+  <% if (viewBag.isLocal) { %>
+    <link type="text/css" rel="stylesheet" href="/styles/frame.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/styles/common.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/styles/header.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/styles/navigation.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/styles/layer.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/styles/pikaday.css?v=<%= viewBag.releaseVersion %>" />
+    <% viewBag.cssFiles.forEach(function (name) { %>
+      <link type="text/css" rel="stylesheet" href="/styles/<%= name %>.css?v=<%= viewBag.releaseVersion %>" />
+    <% }) %>
+  <% } else { %>
+    <link type="text/css" rel="stylesheet" href="/release/styles/frame.min.css?v=<%= viewBag.releaseVersion %>" />
+    <link type="text/css" rel="stylesheet" href="/release/styles/<%= viewBag.releaseCss %>.css?v=<%= viewBag.releaseVersion %>" />
+  <% } %>
+
+  <% include ../config/globalConfig.ejs %>
+  <% include ../config/requirejsConfig.ejs %>
+</head>
+<body>

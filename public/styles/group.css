@@ -1,0 +1,89 @@
+.group {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 248px;
+	border: 1px solid #e7e7e7;
+}
+.group .group-head {
+	height: 28px;
+	line-height: 28px;
+	background-color: #f1f0f0;
+	border-bottom: 1px solid #e7e7e7;
+	text-align: center;
+	color: #555555;
+	font-weight: bold;
+}
+.group .group-body {
+	position: absolute;
+	top: 29px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.group .group-body ul {
+	padding-left: 10px;
+}
+.group .group-body a {
+	text-decoration: none;
+}
+.group .group-body ul li {
+	position: relative;
+	padding-left: 12px;
+}
+.group .group-body ul li a {
+	display: inline-block;
+	line-height: 18px;
+	padding: 6px 0;
+}
+.group .group-body ul li a.leaf {
+	margin-right: 10px;
+}
+.group .group-body ul li a .icon {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url(images/expand_collapse_icon.png) no-repeat;
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+.group .group-body ul li a.leaf .icon {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	background-image: none;
+	background-color: #cacaca;
+	top: 12px;
+}
+.group .group-body ul li a .text {
+	display: inline-block;
+	color: #333333;
+	margin-left: 7px;
+	word-break: break-all;
+}
+.group .group-body ul li a.expand .icon {
+	background-position: 0 -12px;
+}
+.group .group-body ul li a:hover .text{
+	color: #d1291a;
+}
+/* .group .group-body ul li a.checked .icon {
+	background-position: -12px 0;
+}
+.group .group-body ul li a.checked.expand .icon {
+	background-position: -12px -12px;
+} */
+.group .group-body ul li a.leaf.checked .icon {
+	background-color: #d1251a;
+}
+.group .group-body ul li a.checked .text {
+	color: #d1251a;
+	font-weight: bold;
+}
+.group .group-body ul li ul {
+	display: none;
+}

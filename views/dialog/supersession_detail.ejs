@@ -1,0 +1,84 @@
+<div class="layer supersession-detail-layer" id="supersession-detail-dialog">
+	<div class="layer-title">
+		<span class="page-title"><span class="text">替换组详情</span></span>
+		<a class="layer-close-btn" href="javascript:;"></a>
+	</div>
+	<div class="layer-cont-wrapper clearfix" id="supersession-detail-dialog-cont">
+
+		<script type="text/template">
+			{{#record}}
+				<div class="old">
+					<div class="info">
+						<ul class="clearfix">
+							<li><span class="label">旧替换组编码：</span><span class="text" title="{{oldCode}}">{{oldCode}}</span></li>
+							<li><span class="label">旧替换组描述：</span><span class="text" title="{{oldDesc}}">{{oldDesc}}</span></li>
+							<li><span class="label">断点时间：</span><span class="text" title="{{replaceTime}}">{{replaceTime}}</span></li>
+							<li><span class="label">断点类型：</span><span class="text" title="{{substituteType}}">{{substituteType}}</span></li>
+						</ul>
+					</div>
+					<div class="mask"><span class="text">旧件配件信息</span></div>
+					<div class="gird-wrap">
+						<div class="grid">
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 15%;">序号</th>
+										<th style="width: 25%;">配件编码</th>
+										<th style="width: 25%;">配件名称</th>
+										<th style="width: 35%;">备注</th>
+									</tr>
+								</thead>
+								<tbody>
+										{{#olds}}
+										<tr>
+											<td title="{{rowNumber}}">{{rowNumber}}</td>
+											<td title="{{partNo}}">{{partNo}}</td>
+											<td title="{{partName}}">{{partName}}</td>
+											<td title="{{note}}">{{note}}</td>
+										</tr>
+										{{/olds}}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="new">
+					<div class="info">
+						<ul class="clearfix">
+							<li><span class="label">新替换组编码：</span><span class="text" title="{{newCode}}">{{newCode}}</span></li>
+							<li><span class="label">新替换组描述：</span><span class="text" title="{{newDesc}}">{{newDesc}}</span></li>
+							<li><span class="label">断点信息：</span><span class="text" title="{{breakPointNote}}">{{breakPointNote}}</span></li>
+							<li><span class="label">备注：</span><span class="text" title="{{note}}">{{note}}</span></li>
+						</ul>
+					</div>
+					<div class="mask"><span class="text">新件配件信息</span></div>
+					<div class="gird-wrap">
+						<div class="grid">
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 15%;">序号</th>
+										<th style="width: 25%;">配件编码</th>
+										<th style="width: 25%;">配件名称</th>
+										<th style="width: 35%;">备注</th>
+									</tr>
+								</thead>
+								<tbody>
+										{{#news}}
+										<tr>
+											<td title="{{rowNumber}}">{{rowNumber}}</td>
+											<td title="{{partNo}}">{{partNo}}</td>
+											<td title="{{partName}}">{{partName}}</td>
+											<td title="{{note}}">{{note}}</td>
+										</tr>
+										{{/news}}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			{{/record}}
+		</script>
+
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  var globalConfig = {
+    context: {
+      path: '<%= viewBag.path %>',
+      jsonpUrl: '<%= viewBag.jsonpUrl %>',
+      catalogUrl: '../catalog',
+      modelUrl: '../model',
+      usageUrl: '../usage',
+      lang: '<%= viewBag.lang %>'
+    },
+    trans: {}
+  };
+  var pageConfig = {
+    pageCode: '<%= viewBag.pageCode %>',
+    isLocal: <%= viewBag.isLocal %>,
+    releaseVersion: '<%= viewBag.releaseVersion %>',
+    username: '<%= viewBag.username %>',
+    needChangePassword: [<%= viewBag.needChangePassword %>].length > 0 ? <%= viewBag.needChangePassword %> : false,
+    userType: [<%= viewBag.userType %>].length > 0 ? <%= viewBag.userType %> : 0
+  };
+
+  var telReg = /(^[1]\d{10}$)|(^0\d{2,3}-\d{7,8}(-\d{1,4})*$)/;
+  var hasSVG = function() {
+        var SVG_NS = 'http://www.w3.org/2000/svg';
+
+        return !!document.createElementNS &&
+            !!document.createElementNS(SVG_NS, 'svg').createSVGRect;
+  };
+  var htmlEncode = function (s){  
+    var div = document.createElement('div');  
+    div.appendChild(document.createTextNode(s));  
+    return div.innerHTML;  
+  };
+  var htmlDecode = function(s) {
+    var div = document.createElement('div');  
+    div.innerHTML = s;  
+    return div.innerText || div.textContent; 
+  };
+</script>

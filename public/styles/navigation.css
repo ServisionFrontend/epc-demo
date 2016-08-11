@@ -1,0 +1,210 @@
+.page-navigation {
+	height: 30px;
+	background-color: #ededed;
+	*position: relative;
+	*z-index: 62;
+}
+.page-navigation .nav-info {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 7px;
+}
+
+.page-navigation .nav-list-wrap {
+	float: right;
+}
+.page-navigation .nav-list {
+	float: left;
+}
+.page-navigation .nav-list-item {
+	padding: 9px 0;
+	height: 12px;
+	float: left;
+	position: relative;
+	*padding: 3px 0 12px 0;
+}
+.page-navigation .nav-list-item .text-link2 {
+	display: inline-block;
+	*display: inline;
+	*display: inline-block;
+	padding: 0 10px;
+	height: 12px;
+	line-height: 12px;
+	border-left: 1px solid #d3d3d3;
+	*height: 16px;
+	*line-height: 16px;
+	*vertical-align: top;
+}
+.page-navigation .nav-list-item .text-link2:first-child {
+	vertical-align: top;
+}
+.page-navigation .nav-list-item .text-link2 .arrow {
+	display: inline-block;
+	width: 11px;
+	height: 6px;
+	background-image: url(images/top_bottom_arrow.png);
+	background-repeat: no-repeat;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+.page-navigation .nav-list-item .text-link2 .num-wrap {
+	display: none;
+}
+
+.page-navigation .nav-list-item .text-link2 .num-wrap .num {
+	font-weight: bold;
+	color: #d1291a;
+	margin: 0 3px;
+}
+
+.page-navigation .nav-list-item:first-child .text-link2{
+	border-left: none;
+}
+
+.page-navigation .nav-list-item .nav-item-layer {
+	display: none;
+	position: absolute;
+	top: 28px;
+	z-index: 62;
+}
+
+.page-navigation .nav-list-item:hover .text-link2 .arrow {
+	background-position: 0 -16px;
+}
+
+.page-navigation .nav-list-item:hover .nav-item-layer {
+	display: block;
+}
+
+.page-navigation .nav-layer-list {
+	background-color: #fff;
+	border: 1px solid #e7e7e7;
+}
+
+.page-navigation .nav-layer-list li {
+	padding: 0 30px 0 10px;
+	line-height: 26px;
+	white-space: nowrap;
+}
+
+.page-navigation .nav-layer-list li a {
+	color: #333333;
+	text-decoration: none;
+}
+
+.page-navigation .nav-layer-list li:hover {
+	background-color: #d1291a;
+}
+.page-navigation .nav-layer-list li:hover a{
+	color: #fff;
+}
+
+.page-navigation .nav-lang .nav-item-layer, .page-navigation .nav-user-info .nav-item-layer {
+	*left: 0;
+}
+
+.page-navigation .nav-help .nav-item-layer {
+	right: 0;
+}
+
+.page-navigation .nav-help .nav-layer-list li {
+	padding: 0 10px;
+}
+
+/*lang*/
+.page-navigation .nav-lang li.checked {
+	background-color: #d1291a;
+}
+.page-navigation .nav-lang li.checked a{
+	color: #fff;
+}
+
+/*cart*/
+.nav-item-layer.cart {
+	width: 298px;
+	border: 1px solid #e3e3e3;
+	background-color: #ffffff;
+	right: 0;
+}
+.nav-item-layer.cart .arrow {
+	position: absolute;
+	width: 14px;
+	height: 8px;
+	background-image: url(images/cart_layer_arrow.png);
+	background-repeat: no-repeat;
+	right: 20px;
+	top: -8px;
+}
+.nav-item-layer.cart .cart-head {
+	border-bottom: 1px solid #e3e3e3;
+	background: #f1f0f0;
+	padding: 0 15px;
+	height: 25px;
+	line-height: 25px;
+}
+.nav-item-layer.cart .cart-body {
+	max-height: 265px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.nav-item-layer.cart .cart-body li {
+	font-size: 0;
+	border-bottom: 1px dashed #dadada;
+	padding: 4px 0;
+}
+.nav-item-layer.cart .cart-body li .item {
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.nav-item-layer.cart .cart-body .part-info {
+	width: 30%;
+	padding: 0 5px 0 12px;
+}
+.nav-item-layer.cart .cart-body .part-info .part-no {
+	
+}
+.nav-item-layer.cart .cart-body .part-info .part-name {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	*height: 14px;
+	*line-height: 14px;	
+	
+}
+.nav-item-layer.cart .cart-body .qty {
+	width: 20%;
+	text-align: center;
+}
+.nav-item-layer.cart .cart-body .operation {
+	width: 30%;
+	text-align: right;
+}
+.nav-item-layer.cart .cart-body .operation .btn {
+	padding: 2px 5px;
+	margin: 0;
+}
+.nav-item-layer.cart .cart-foot {
+	padding: 0 20px 20px 20px;
+}
+.nav-item-layer.cart .cart-foot .desc {
+	line-height: 30px;
+	margin: 3px 0 10px 0;
+}
+.nav-item-layer.cart .cart-foot .desc .count {
+	font-weight: bold;
+	color: #d1291a;
+	margin: 0 4px;
+}
+.nav-item-layer.cart .cart-foot .btn {
+	margin: 0;
+	padding: 8px 0;
+	display: block;
+	font-size: 14px;
+}
+

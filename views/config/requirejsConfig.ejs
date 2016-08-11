@@ -1,0 +1,135 @@
+<script type="text/javascript" src="/scripts/libs/public/require-2.0.6.min.js?v=<%= viewBag.releaseVersion %>"></script>
+
+<script type="text/javascript">
+  requirejs.config({
+    baseUrl: '/scripts/',
+    waitSeconds:30,
+    paths: {
+      //lib
+      jquery: 'libs/public/jquery-1.11.3.min.js',
+      json2: 'libs/public/json2.js',
+      domReady: 'libs/public/domReady.js',
+      ajax: 'libs/private/ajax.js?_dc',
+      jqForm: 'libs/public/jquery.form.js',
+      mustache: "libs/public/mustache.js",
+      amplify: "libs/public/amplify.min.js",
+      text: "libs/public/text.js",
+      jqueryUI: "libs/public/jquery-ui.js",
+      jqueryDatepicker: "libs/public/jquery.ui.datepicker-zh_CN.js",
+      md5: "libs/private/md5.js",
+      jqExtend: "libs/private/jqExtend.js",
+      cookie: "libs/public/jquery.cookies.2.2.0.js",
+      colResizable: "libs/public/colResizable-1.6.min.js",
+      pjax: "libs/public/jquery.pjax.js",
+      ejs : "libs/public/ejs_production.js",
+      pjaxInterceptor: "libs/private/pjaxInterceptor.js",
+
+      //component
+      showLoading: "component/public/showLoading/jquery.showLoading.min.js",
+      blockUI: "component/public/blockUI/jquery.blockUI.js",
+      ieShims: "component/public/blockUI/ie.shims.js",
+      dialog: "component/private/dialog.js",
+      checkbox: "component/private/jquery_checkbox.js",
+      layer: "component/private/layer.js",
+      loading: "component/private/loading.js",
+      grid: "component/private/grid.js",
+      paging: "component/private/paging.js",
+      search: "component/private/search.js",
+      select: "component/private/form_select.js",
+      calendar: "component/private/calendar.js",
+      carCatalogSelect: "component/private/car_catalog_select.js",
+      numbox: "component/private/jquery.numbox.js",
+      pikaday: "component/public/pikaday/pikaday.js",
+      moment: "component/public/pikaday/moment.js",
+
+      //legend 
+      hotpoint: 'component/private/hotpoint/js/hotpoint.js',
+      zoomImg: 'component/private/zoomImg/zoomImg.js',
+      jquerySvgZoomDrag: 'component/private/svgzoomdrag/js/jquery.svgzoomdrag.js',
+      jquerySvgHotpoint: 'component/private/svghotpoint/js/jquery.svghotpoint.js',
+      scrollIntoView: "libs/public/jquery.scrollIntoView.js",
+      d3: "component/public/d3/d3.js",
+      snap: "component/public/snapSvg/snap.svg.js",
+      mousewheel: "libs/public/jquery.mousewheel.js",
+      jsDraw2D: "libs/public/jsDraw2D.js",
+      normalize: "libs/public/normalize.js",
+
+      //app
+      login: "app/login/main.js",
+
+      //common
+      header: "app/common/header.js",
+      group: "app/common/group.js",
+      crumbs: "app/common/crumbs.js",
+      headerSearch: "app/common/header_search.js",
+      miniCart: "app/common/mini_cart.js",
+
+      //dialog
+      advancedSearch: "app/dialog/advanced_search.js",
+      modifyPassword: "app/dialog/modify_password.js",
+      modifyEmail: "app/dialog/modify_email.js",
+      notice: "app/dialog/notice.js",
+      supersessionSearch: "app/dialog/supersession_search.js",
+      userinfo: "app/dialog/userinfo.js",
+      vinAnalysis: "app/dialog/vin_analysis.js",
+      vehicleCode: "app/dialog/vehicle_code.js",
+      supersessionDetail: "app/dialog/supersession_detail.js",
+      questionnaireList: "app/dialog/questionnaire_list.js",
+
+      //model      
+      legend: "app/model/legend.js",
+      parts: "app/model/parts.js",
+      layout: "app/model/layout.js",
+      legendList: "app/model/legend_list.js",
+      note: "app/model/note.js",
+
+      //detail
+      supplier: "app/detail/supplier.js",
+      supersession: "app/detail/supersession.js",
+      kit: "app/detail/kit.js",
+      thumbsImg: "app/detail/thumbs_img.js",
+      kitDetail: 'app/detail/kit_detail.js',
+
+      //uploadFile
+      uploadFile: "app/pac/online/file_upload.js",
+      getFormValue: "component/private/form_value.js",
+
+      //closeQuestion
+      qustionCloseAction: "app/pac/online/question_close.js",
+
+      //num_limit
+      numLimit: "app/pac/online/num_limit.js"
+
+    },
+    shim: {
+      jquery:{
+        exports:"$"
+      },
+      ajax: ['jquery', 'dialog'],
+      jqForm: ['jquery'],
+      jqExtend: ['jquery', 'blockUI'],
+      cookie: ['jquery'],
+      grid: ['jquery'],
+      search: ['jquery'],
+      paging: ['jquery'],
+      zoomImg: ['jquery'],
+      scrollIntoView:['jquery'],
+      jquerySvgZoomDrag: ['jquery', 'showLoading'],
+      jquerySvgHotpoint: ['jquery'],
+      pjax:['jquery'],
+      pjaxInterceptor:['pjax'],
+      hotpoint: ['jquery'],
+      mousewheel: ['jquery'],
+      numbox: ['jquery'],
+      showLoading: ['jquery'],
+      carCatalogSelect: ['jquery'],
+      getFormValue: ['jquery'],
+      pikaday: ['moment'],
+      blockUI: ['ieShims'],
+      numLimit: ['jquery'],
+      qustionCloseAction: ['numLimit'],
+      checkbox: ['jquery']
+    }
+  });
+
+</script>

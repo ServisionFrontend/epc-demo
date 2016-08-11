@@ -1,0 +1,36 @@
+<%
+  viewBag.pageCode = 'model';
+  viewBag.cssFiles = ['crumbs', "model", 'usage', "group"];
+  viewBag.releaseCss = 'model.min';
+  viewBag.pageTitle = '';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+<% include ../common/crumbs.ejs %>
+
+<!--begin body-->
+
+	<div class="page-cont">
+		
+		<% include ../common/group.ejs %>
+
+		<% include legend_list.ejs %>
+
+		<div id="legend-parts-wrap" class="legend-parts-wrap">
+
+			<div class="group-legend-toggle" id="group-toggle-bar"></div>
+
+		    <% include legend.ejs %>
+
+		    <div class="legend-parts-toggle" id="parts-toggle-bar"></div>
+
+		    <% include parts.ejs %>
+
+		</div>
+
+	</div>
+	<% include ./print_layer.ejs %>
+
+<script>var GROUPS = <%- JSON.stringify(groups) %>;</script>
+<!--end body-->
+<% include ../common/footer.ejs %>

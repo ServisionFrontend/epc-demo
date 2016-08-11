@@ -1,0 +1,61 @@
+<%
+  viewBag.pageCode = 'step_third';
+  viewBag.cssFiles = ['pwd_info'];
+  viewBag.releaseCss = 'pwd_info.min';
+  viewBag.pageTitle = '找回密码';
+%>
+<% include ../common/head.ejs %>
+
+<div class="container">
+    <div class="header">
+        <div class="flag-title">
+            <span class="text-center">EPC电子配件目录</span>
+            <span class="text-after"></span>
+        </div>
+        <div class="center">
+            <div class="website-title">
+                <span class="web-title-text" title="北京汽车"></span>
+            </div>
+        </div>
+
+    </div>
+    <div id="body_pwdinfo" class="body">
+        <div class="banner">
+            <div class="content">
+                <p class="c-title">重设密码</p>
+                <div class="c-content">
+                    <div class="data-item big-size">
+                        <span class="label">
+                            <span class="text">用户名：</span>
+                        </span>
+                        <span class="text-block" data-name="username"></span>
+                    </div>
+                    <div class="data-item big-size">
+                        <span class="label">
+                            <span class="text">新密码：</span>
+                        </span>
+                        <input class="input-box" type="password" data-null="false" name="old-pwd" autocomplete="false">
+                        <span class="tip">
+                            <span class="text">密码为6-18位字母和数字组合</span>
+                        </span>
+                    </div>
+                    <div class="data-item big-size">
+                        <span class="label">
+                            <span class="text">确认密码：</span>
+                        </span>
+                        <input class="input-box" type="password" data-null="false" name="new-pwd">
+                        <span class="tip error hide">
+                            <span class="text"></span>
+                        </span>
+                    </div>
+                    <div class="c-btn">
+                        <a href="javascript:;" class="btn-download" data-action="submit">重设密码</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../common/footer.ejs %>

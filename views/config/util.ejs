@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+var util = {
+    hasSVG :function() {
+        var SVG_NS = 'http://www.w3.org/2000/svg';
+
+        return !!document.createElementNS &&
+            !!document.createElementNS(SVG_NS, 'svg').createSVGRect;
+    },
+    htmlEncode : function (s){
+	    var div = document.createElement('div');
+
+	    div.appendChild(document.createTextNode(s));
+
+	    return div.innerHTML;
+  	},
+    htmlDecode : function(s) {
+        var div = document.createElement('div');
+
+        div.innerHTML = s;
+        return div.innerText || div.textContent;
+    },
+    inherits : function(ctor, superCtor) {
+
+	  if (ctor === undefined || ctor === null)
+	    throw new TypeError('The constructor to `inherits` must not be ' +
+	                        'null or undefined.');
+
+	  if (superCtor === undefined || superCtor === null)
+	    throw new TypeError('The super constructor to `inherits` must not ' +
+	                        'be null or undefined.');
+
+	  if (superCtor.prototype === undefined)
+	    throw new TypeError('The super constructor to `inherits` must ' +
+	                        'have a prototype.');
+
+	  ctor.super_ = superCtor;
+	  ctor.prototype = Object.create(superCtor.prototype, {
+	    constructor: {
+	      value: ctor,
+	      enumerable: false,
+	      writable: true,
+	      configurable: true
+	    }
+	  });
+    }
+};
+
+</script>

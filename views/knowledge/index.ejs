@@ -1,0 +1,39 @@
+<%
+viewBag.pageCode = 'knowledge';
+viewBag.cssFiles = ["knowledge"];
+viewBag.releaseCss = 'knowledge.min';
+viewBag.pageTitle = '';
+%>
+<% include ../common/head.ejs %>
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+  <div class="page-banner" id="page-banner">
+    <span class="text">知识库</span>
+  </div>
+
+  <div class="wrapper-knowledge-library">
+    <table>
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>大小</th>
+          <th>修改时间</th>
+        </tr>
+      </thead>
+      <tbody id="box-knowledge">
+      <script type="text/template" id="template-knowledge">
+          {{#list}}
+            <tr>
+              <td><a href="{{url}}" target="_blank" class="{{className}}" title="{{name}}">{{name}}</a></td>
+              <td>{{size}} KB</td>
+              <td>{{mtime}}</td>
+            </tr>
+          {{/list}}
+        </script>
+
+      </tbody>
+    </table>
+  </div>
+<!--end body-->
+<% include ../common/footer.ejs %>

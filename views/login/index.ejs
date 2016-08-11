@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<%
+  viewBag.pageCode = 'login';
+  viewBag.cssFiles = ['login'];
+  viewBag.releaseCss = 'login.min';
+  viewBag.pageTitle = '登录_';
+%>
+<% include ../common/head.ejs %>
+  <!--begin body-->
+  <div class="box-login">
+
+    <div class="wrap">
+      <div class="wrap-row">
+        <div id="container" class="container">
+          <div class="header">北汽电子配件目录信息管理系统</div>
+          <div class="msg-box">
+            <div id="msg" class="msg">
+              <div class="tips error">
+                <span class="icon"></span>
+                <span data-msg="msg" class="text">出现未知错误</span>
+              </div>
+            </div>
+          </div>
+          <div class="body clearfix">
+            <div class="row row-login">
+              <div class="cell label">帐号:</div>
+              <div class="cell textbox">
+                <input type="text" id="account" class="input-box" data-field="usr"></div>
+              <div class="cell textbox">
+                <span class="star-symbol">*</span>
+              </div>
+            </div>
+            <div class="row row-login">
+              <div class="cell label">密码:</div>
+              <div class="cell textbox">
+                <input type="text" class="input-box" id="password" data-field="pwd" autocomplete="off"></div>
+              <div class="cell textbox">
+                <span class="star-symbol">*</span>
+              </div>
+            </div>
+            <div class="row row-login">
+              <div class="cell label">语言:</div>
+              <div class="cell textbox">
+                <!-- <input type="text" data-field="Language">
+                -->
+                <span class="form-select form-select-lang">
+                  <input type="hidden" class="form-select-input" data-field="lang" autocomplete="off" value="1">
+                  <a class="form-select-switch-btn" href="javascript:;">
+                    <span class="form-select-text" title=""></span>
+                  </a>
+                  <ul id="lang-select" class="form-select-option-list" style="display: none;">
+                    <script type="text/template" id="select-template" class="template">
+                      {{#data}}
+                        <li class="form-select-option" data-value={{code}} title="{{name}}">{{name}}</li>
+                      {{/data}}
+                    </script>
+                  </ul>
+                </span>
+
+              </div>
+            </div>
+            <div class="row row-login">
+              <div class="cell label">请选择:</div>
+              <div class="cell textbox">
+                <span class="form-select form-select-database">
+                  <input type="hidden" class="form-select-input" data-field="database" autocomplete="off" value="">
+                  <a class="form-select-switch-btn" href="javascript:;">
+                    <span class="form-select-text" title=""></span>
+                  </a>
+                  <ul id="database-select" class="form-select-option-list" style="display: none;">
+                    <script type="text/template" class="template">
+                      {{#data}}
+                        <li class="form-select-option" data-value={{code}} title="{{name}}">{{name}}</li>
+                      {{/data}}
+                    </script>
+                  </ul>
+                </span></div>
+            </div>
+
+            <div class="row row-login">
+              <input type="button" id="btn-login" class="btn-login" value="登录"></div>
+
+            <div class="row row-login text-wrap">
+              <a href="/pwdInfo" class="forget-pwd cell">忘记密码?</a>
+              <a href="/res/HttpsCert.zip" target="_blank" class="download-cert">下载证书</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end body-->
+  <% include ../common/footer.ejs %>

@@ -1,0 +1,40 @@
+/* crumbs */
+.page-crumbs {
+	height: 30px;
+	background-color: #3e495d;
+	line-height: 30px;
+	position: relative;
+}
+.page-crumbs .list {
+	overflow: hidden;
+}
+.page-crumbs .list .item {
+	float: left;
+	padding: 0 10px 0 16px;
+	background: url(images/crumbs_arrow.png) no-repeat center left;
+	color: #fff;
+}
+.page-crumbs .list .item:first-child {
+	background: none;
+	padding-left: 12px;
+}
+.page-crumbs .list .item:last-child .text-link2 {
+	font-weight: bold;
+}
+.page-crumbs .list .item .text-link2 {
+	color: #fff;
+}
+
+.page-crumbs .icon-btn.print {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	display: none;
+}
+.page-crumbs .icon-btn.print .icon {
+	background: url(images/print_icon.png) no-repeat;
+}
+.page-crumbs .icon-btn.print .text {
+	color: #fff;
+	font-weight: bold;
+}

@@ -1,0 +1,49 @@
+	<div class="layer questionnaire-list-layer" id="questionnaire-list-dialog">
+		<div class="layer-title">
+			<span class="page-title"><span class="text">问卷调查</span></span>
+			<a class="layer-close-btn" href="javascript:;"></a>
+		</div>
+		<div class="layer-cont-wrapper">
+			<div class="grid">
+				<table id="questionnaire-list-grid-table">
+					<thead>
+						<tr>
+							<th style="width: 8%">序号</th>
+							<th>问卷调查编码</th>
+							<th>问卷调查主题</th>
+							<th>发布日期</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody data-id="grid-result" id="questionnaire-list-wrapper">
+						<script type="text/template" id="questionnaire-list-templ">
+						{{#list}}
+							<tr>
+								<td>{{number}}</td>
+								<td>
+								{{#answered}}
+									<a href="/pac/survey/detail/{{code}}" target="_blank" class="text-link">{{numbering}}</a>
+								{{/answered}}
+								{{^answered}}
+									<a href="/pac/survey/edit/{{code}}" target="_blank" class="text-link">{{numbering}}</a>
+								{{/answered}}
+								</td>
+								<td>{{name}}</td>
+								<td>{{createTime}}</td>
+								<td>
+								{{#answered}}
+								<a href="/pac/survey/detail/{{code}}" target="_blank" class="text-link a-link"><span class="search-text">查看回复</span></a>
+								{{/answered}}
+								{{^answered}}
+									<a href="/pac/survey/edit/{{code}}" target="_blank" class="search-link text-link a-link" data-code="{{code}}"><span class="search-icon"></span><span class="search-text">参与调研</span></a>
+								{{/answered}}
+								</td>
+							</tr>
+						{{/list}}
+						</script>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
